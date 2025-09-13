@@ -4,7 +4,14 @@ import { heroAchievement } from "@/app/utils/index";
 import { FaBookmark } from "react-icons/fa";
 import { memo, useEffect, useState } from "react";
 
-const Card = memo(({ title, description, visible, index }: any) => {
+interface CardProps {
+    title : string , 
+    description : string , 
+    visible : boolean , 
+    index : number
+}
+
+const Card = memo(({ title, description, visible, index }: CardProps) => {
     return visible ?
         (<motion.div
             key={`Achivement-Hero-Section-${index}`}
@@ -27,9 +34,11 @@ const Card = memo(({ title, description, visible, index }: any) => {
         : null
 });
 
+Card.displayName = "Card"
+
 const Achievement = () => {
     const [visibleIndex, setVisibleIndex] = useState(0);
-    let achievements = heroAchievement.length;
+    const achievements = heroAchievement.length;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -43,7 +52,7 @@ const Achievement = () => {
         }, 1000)
 
         return () => clearInterval(interval)
-    }, []);
+    }, [achievements]);
 
     return (
         <div
