@@ -1,14 +1,15 @@
 import Link from "next/link"
-import { images, HeroHeaders } from '@/app/utils/index';
+import {HeroHeaders } from '@/app/utils/index';
 import Login from "./Login";
+import Image from "next/image";
 
 
 export default function Header() {
     return (
-        <div className="h-28 w-full flex flex-row justify-between items-center">
+        <div className="w-full flex flex-row justify-between items-center ">
             <Link href="/home">
                 <div className="h-[50px] w-[140px] overflow-hidden flex justify-center items-center rounded-lg">
-                    <img src={images.logo} alt="Bhargava Enterprizes" className="h-[160px] w-[250px] object-contain bg-white " />
+                    <Image src="/assets/logo.webp" alt="Bhargava Trading Co." className="object-contain bg-white" width={250} height={160} />
                 </div>
             </Link>
 

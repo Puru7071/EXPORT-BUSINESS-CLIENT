@@ -15,7 +15,7 @@ const Card = memo(({ title, description, visible, index }: CardProps) => {
     return visible ?
         (<motion.div
             key={`Achivement-Hero-Section-${index}`}
-            className='border-0 bg-[#212529]/80 rounded h-[140px] w-[220px] relative flex flex-col gap-2'
+            className='border-0 bg-[#212529]/80 rounded pb-4 relative flex flex-col gap-2'
             initial={{opacity:0 , scale:0}}
             animate={{opacity:[0,0.5,1] , scale:[0,1.1,1] }}
         >
@@ -27,7 +27,7 @@ const Card = memo(({ title, description, visible, index }: CardProps) => {
                 </div>
             </div>
 
-            <div className='text-justify px-4 text-[#adb5bd]'>
+            <div className='text-[#adb5bd] px-2 break-all'>
                 {description}
             </div>
         </motion.div>)
@@ -56,7 +56,7 @@ const Achievement = () => {
 
     return (
         <div
-            className='flex flex-row gap-4 relative mt-10'
+            className='relative mt-10 grid grid-cols-5 gap-3'
         >
             {heroAchievement?.map((achievement, index) => {
                 const visible = index <= visibleIndex;
