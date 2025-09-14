@@ -8,8 +8,9 @@ const Motivator = () => {
             src="/assets/collage.webp" 
             classes="h-120 w-[45%] transition-all duration-500 cursor-pointer" 
             alt="LEGACY-BUSINESS-IMAGE" 
-            children={<VisionComponent/>}
-        />
+        >
+          <VisionComponent/>
+        </LazyImage>
     </>
   )
 }

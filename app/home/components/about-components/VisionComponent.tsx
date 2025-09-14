@@ -1,22 +1,11 @@
 "use client"
-import { ReactElement, useEffect, useState } from "react"
+import { ReactElement} from "react"
 import { visions } from "@/app/utils"
 import LazyImage from "@/app/components/LazyImage";
 import { motion } from "framer-motion";
 import Writer from "@/app/components/Writer";
 
 const VisionComponent = (): ReactElement => {
-    const [index, setIndex] = useState(0);
-    const total = visions.length;
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex(prev => (prev + 1) % total);
-        }, 10500)
-
-        return () => clearInterval(interval);
-    }, [])
-
     return (
         <div className="text-2xl text-white absolute top-0 left-0 w-full h-full  z-4 flex flex-col items-center justify-center gap-4">
             <motion.div 

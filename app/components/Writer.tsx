@@ -6,13 +6,12 @@ const Writer = ({words , typeSpeed = 70 , deleteSpeed = 80 , delaySpeed = 1200}:
         <span className='text-2xl text-gray-200 font-[500]'>
             <Typewriter
                 words={words}
-                loop
+                loop={1}
                 cursor
                 cursorStyle="|"
                 typeSpeed={typeSpeed}
                 deleteSpeed={deleteSpeed}
                 delaySpeed={delaySpeed}
-                loop={1}
             />
         </span>
     )
