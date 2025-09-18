@@ -16,7 +16,7 @@ const HeroSection = () => {
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        style={{ objectFit: "cover", objectPosition: "center" }}
         placeholder='blur'
         blurDataURL="/assets/hero.webp"
       />
