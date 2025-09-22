@@ -17,16 +17,16 @@ export interface Review {
 
 
 const Card = ({ data, position }: { data: Review, position: string }) => {
-    const baseClasses = "h-56 shadow-xl rounded-xl bg-white flex-shrink-0 p-5 flex flex-col gap-3 absolute top-0";
+    const baseClasses = "h-56  rounded-xl bg-white flex-shrink-0 p-5 flex flex-col gap-3 absolute top-0";
     const variableClasses = ((): string | null => {
         if (position === "center") {
-            return "w-[34%] scale-105 left-1/2 -translate-x-1/2 z-2"
+            return "w-[34%] scale-105 left-1/2 -translate-x-1/2 z-2 shadow-2xl"
         }
         else if (position === "left") {
-            return "w-[31%] scale-75 left-[10%] z-1"
+            return "w-[31%] scale-75 left-[4.5%] z-1 shadow-xl"
         }
         else if (position === "right") {
-            return "w-[31%] scale-75 right-[6%] z-1"
+            return "w-[31%] scale-75 right-[4.5%] z-1 shadow-xl"
         }
         return null;
     })();
