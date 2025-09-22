@@ -107,6 +107,86 @@ export const punchLines = [
   "Integrity, Transparency, and Strong Relationships"
 ]
 
+export const reviews = [
+  {
+    "id": "rv_en_01",
+    "author": "Namsang",
+    "language": "English",
+    "rating": 5,
+    "review": "Bhargav Trading Co. ensured timely shipment and smooth customs clearance. The entire process was handled very professionally, from order confirmation to final delivery, making my experience completely hassle-free.",
+    "translation": "Bhargav Trading Co. ensured timely shipment and smooth customs clearance. The entire process was handled very professionally, from order confirmation to final delivery, making my experience completely hassle-free.",
+    "url": "/assets/avatars/english-1.webp",
+    "sign" : "/assets/signatures/namsang-sign.webp"
+  },
+
+  {
+    "id": "rv_pn_01",
+    "author": "Harpreet Singh",
+    "language": "Punjabi",
+    "rating": 4,
+    "review": "ਭਾਰਗਵ ਟਰੇਡਿੰਗ ਕੰਪਨੀ ਦੀ ਐਕਸਪੋਰਟ ਸੇਵਾ ਬਹੁਤ ਵਧੀਆ ਹੈ, ਹਮੇਸ਼ਾ ਸਮੇਂ 'ਤੇ ਸਪੁਰਦਗੀ ਹੁੰਦੀ ਹੈ। ਸਟਾਫ ਦਾ ਵਿਹਾਰ ਬਹੁਤ ਹੀ ਸੁਖਦਾਈ ਹੈ ਅਤੇ ਪੂਰਾ ਪ੍ਰਕਿਰਿਆ ਬਿਲਕੁਲ ਆਸਾਨ ਬਣਾਈ ਗਈ ਹੈ।",
+    "translation": "Bhargav Trading Co.'s export service is excellent, always delivers on time. The staff is very polite and the entire process has been made extremely simple.",
+    "url": "/assets/avatars/punjabi-1.webp",
+    "sign" : "/assets/signatures/harpreet-sign.webp"
+  },
+  
+  {
+    "id": "rv_hi_01",
+    "author": "Anita Sharma",
+    "language": "Hindi",
+    "rating": 5,
+    "review": "भर्गव ट्रेडिंग की निर्यात सेवा भरोसेमंद और तेज है। टीम पूरी प्रक्रिया को पारदर्शी और आसान बनाती है, जिससे ग्राहक को हर कदम पर विश्वास और संतुष्टि मिलती है।",
+    "translation": "Bhargav Trading’s export service is reliable and fast. The team makes the entire process transparent and simple, giving the customer trust and satisfaction at every step.",
+    "url": "/assets/avatars/hindi-1.webp",
+    "sign" : "/assets/signatures/anita-sign.webp"
+  },
+
+  {
+    "id": "rv_pn_02",
+    "author": "Gurpreet Singh",
+    "language": "Punjabi",
+    "rating": 4,
+    "review": "ਸਮਾਨ ਸੁਰੱਖਿਅਤ ਪੈਕਿੰਗ ਵਿੱਚ ਮਿਲਿਆ, ਪਰ ਥੋੜ੍ਹੀ ਦੇਰ ਨਾਲ। ਇਸ ਤੋਂ ਇਲਾਵਾ, ਗੁਣਵੱਤਾ ਸ਼ਾਨਦਾਰ ਸੀ ਅਤੇ ਸਮੁੱਚਾ ਅਨੁਭਵ ਬਹੁਤ ਚੰਗਾ ਰਿਹਾ।",
+    "translation": "The goods arrived in secure packaging, but with slight delay. Apart from that, the quality was excellent and the overall experience was very good.",
+    "url": "/assets/avatars/punjabi-2.webp",
+    "sign" : "/assets/signatures/gurpreet-sign.webp"
+  },
+
+  {
+    "id": "rv_ur_01",
+    "author": "Sajid Ali",
+    "language": "Urdu",
+    "rating": 5,
+    "review": "بھارگَو ٹریڈنگ کی برآمدی خدمت بہت معیاری اور قابلِ اعتماد ہے۔ وقت پر ڈیلیوری، بہترین پیکنگ اور دوستانہ کسٹمر سپورٹ نے اس تجربے کو مزید شاندار بنا دیا۔",
+    "translation": "Bhargav Trading’s export service is high quality and trustworthy. On-time delivery, excellent packaging, and friendly customer support made the experience even more outstanding.",
+    "url": "/assets/avatars/urdu-1.webp",
+    "sign" : "/assets/signatures/sajid-sign.webp"
+  },
+
+  {
+    "id": "rv_kn_02",
+    "author": "Bala Rao",
+    "language": "Kannada",
+    "rating": 4,
+    "review": "ಡಾಕ್ಯುಮೆಂಟೇಶನ್ ಸುಲಭವಾಗಿತ್ತು, ಆದರೆ ಡೆಲಿವರಿ ಸ್ವಲ್ಪ ತಡವಾಯಿತು. ಆದರೂ ಉತ್ಪನ್ನಗಳ ಗುಣಮಟ್ಟ ಅತ್ಯುತ್ತಮವಾಗಿದ್ದು, ಮುಂದಿನ ಖರೀದಿಗೂ ನಾನು ಖಂಡಿತವಾಗಿ ಇವರನ್ನೇ ಆಯ್ಕೆಮಾಡುತ್ತೇನೆ.",
+    "translation": "The documentation was simple, but the delivery was a little late. However, the product quality was excellent, and I will definitely choose them again for my future purchases.",
+    "url": "/assets/avatars/south-2.webp",
+    "sign" : "/assets/signatures/bala-sign.webp"
+  },
+
+  {
+    "id": "rv_ml_02",
+    "author": "Anjali Nair",
+    "language": "Malayalam",
+    "rating": 4,
+    "review": "സാധനങ്ങൾ സുരക്ഷിതമായി എത്തി, പക്ഷേ ചെറിയ താമസം ഉണ്ടായി. സ്റ്റാഫിന്റെ സഹകരണവും ഇടപെടലും വളരെ മികച്ചതായിരുന്നു, അതിനാൽ മൊത്തത്തിലുള്ള അനുഭവം വളരെ സന്തോഷകരമായിരുന്നു.",
+    "translation": "The goods arrived safely, but there was a small delay. The staff’s cooperation and communication were excellent, making the overall experience very satisfying.",
+    "url": "/assets/avatars/south-1.webp",
+    "sign" : "/assets/signatures/anjali-sign.webp"
+  }
+]
+
+
 
 
 export const mobile = "9813963287"

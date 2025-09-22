@@ -6,7 +6,7 @@ const Skeleton = () => {
     return <div className="h-full w-full bg-black/10 animate-pulse absolute inset-0 z-2"></div>
 }
 
-const LazyImage = ({ alt, src , classes = "" , children = null , priority = false}: { alt: string, src: string , classes ?: string , children ?: ReactElement | null , priority ?: boolean}) => {
+const LazyImage = ({ alt, src , classes = "" , children = null , priority = false , direct = false}: { alt: string, src: string , classes ?: string , children ?: ReactElement | null , priority ?: boolean , direct ?: boolean}) => {
     const [visible, setVisible] = useState<boolean>(false) ;
     const [loading , setLoading] = useState<boolean>(true) ; 
     const imgRef = useRef(null);
@@ -44,7 +44,7 @@ const LazyImage = ({ alt, src , classes = "" , children = null , priority = fals
                 onLoadingComplete={() => setLoading(false)}
             />}
 
-            {loading && <Skeleton/>}
+            {loading && !direct && <Skeleton/>}
 
             {!loading && children}
         </div>

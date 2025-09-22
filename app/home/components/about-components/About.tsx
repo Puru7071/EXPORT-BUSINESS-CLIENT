@@ -17,6 +17,9 @@ const PunchLineCard = ({ text }: { text: string }): ReactElement => {
 const About = () => {
     return (
         <div className="w-[55%]">
+            <div className="grid grid-cols-4 gap-2 mb-8">
+                {punchLines.map((line, index) => <PunchLineCard key={`PUNCH-LINE-${index}`} text={line} />)}
+            </div>
             <h1 className="text-xl font-[500] pb-2 w-[25%] border-b-3 flex flex-row gap-2 text-amber-600 mb-4">
                 <MdLibraryBooks className="relative top-1.5" /> About Us
             </h1>
@@ -29,9 +32,6 @@ const About = () => {
             <p className="text-gray-500 font-[500] text-justify mb-8">
                 We are a family-run business with <b>three generations of experience in global trade</b>. Our operations span sourcing from trusted artisans and farms, rigorous quality control, and modern packaging and export standards. Whether you’re a retailer, distributor, or importer, our goal is to deliver value, trust, and long-term partnership.
             </p>
-            <div className="grid grid-cols-4 gap-2">
-                {punchLines.map((line, index) => <PunchLineCard key={`PUNCH-LINE-${index}`} text={line} />)}
-            </div>
         </div>
     )
 }
