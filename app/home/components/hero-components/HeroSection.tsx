@@ -10,12 +10,10 @@ import { TypeWriterTexts } from '@/app/utils';
 const HeroSection = () => {
   return (
     <div className='hero-frame w-[100%] h-[100vh] relative overflow-x-hidden'>
-      <Image
+      <img
         src="/assets/hero.webp"
         alt="Bhargava Enterprises team working on business solutions"
-        fill
-        priority
-        sizes="100vw"
+        fetchPriority = "high"
         style={{ objectFit: "cover", objectPosition: "center" }}
       />
       <div

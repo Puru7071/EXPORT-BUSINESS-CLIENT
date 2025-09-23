@@ -92,11 +92,11 @@ const ReviewSection = () => {
     }, [length]);
     return (
         <div className='w-full h-auto pb-10 bg-white'>
-            <h1 className='text-3xl font-bold mb-15 px-18 pt-2 w-full'>
+            {/* <h1 className='text-3xl font-bold mb-15 px-18 pt-2 w-full'>
                 <span className='border-b-4 border-amber-600 w-[30%] block pb-2 text-amber-600'>
                     What Our Customers Say ?
                 </span>
-            </h1>
+            </h1> */}
             <div className='w-full flex h-56 flex-row justify-center flex-nowrap gap-0 pt-2 pb-10 relative'>
                 <Card data={reviews[prevIndex]} position='left' />
                 <Card data={reviews[curIndex]} position='center' />
