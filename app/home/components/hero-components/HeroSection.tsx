@@ -14,7 +14,7 @@ const HeroSection = () => {
         src="/assets/hero.webp"
         alt="Bhargava Enterprises team working on business solutions"
         fetchPriority = "high"
-        style={{ objectFit: "cover", objectPosition: "center" }}
+        className='w-full h-full object-cover'
       />
       <div
         className='h-full w-full absolute top-0 left-0 bg-black/70 flex flex-col justify-around items-start gap-0 lg:px-32 md:px-24'
