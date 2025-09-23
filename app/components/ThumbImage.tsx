@@ -2,46 +2,45 @@
 import React, { useEffect, useRef, useState } from "react"
 
 interface HeroInterface {
-  main: string
-  thumbnail: string
-  alt: string
-  className?: string
+    main: string
+    thumbnail: string
+    alt: string
+    className?: string
 }
 
 const ThumbImage = ({ main, thumbnail, alt, className = "" }: HeroInterface) => {
-  const [loaded, setLoaded] = useState(false)
-  const mainImgRef = useRef<HTMLImageElement | null>(null)
+    const [loaded, setLoaded] = useState(false)
+    const mainImgRef = useRef<HTMLImageElement | null>(null)
 
-  useEffect(() => {
-    if (mainImgRef.current?.complete) {
-      // if already cached, mark as loaded
-      setLoaded(true)
-    }
-  }, [])
+    useEffect(() => {
+        if (mainImgRef.current?.complete) {
+            // if already cached, mark as loaded
+            setLoaded(true)
+        }
+    }, [])
 
-  return (
-    <div className={`relative overflow-hidden ${className}`}>
-      {/* Thumbnail */}
-      <img
-        src={thumbnail}
-        alt={`${alt} thumbnail`}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-          loaded ? "opacity-0" : "opacity-100"
-        }`}
-      />
+    return (
+        <div className={`relative w-full aspect-[4/3] overflow-hidden ${className}`}>
+            {/* Thumbnail */}
+            <img
+                src={thumbnail}
+                alt={`${alt} thumbnail`}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${loaded ? "opacity-0" : "opacity-100"
+                    }`}
+            />
 
-      {/* Main image */}
-      <img
-        ref={mainImgRef}
-        src={main}
-        alt={alt}
-        className={`w-full h-full object-cover transition-opacity duration-500  ${
-            loaded ? "opacity-100" : "opacity-0"
-        }`}
-        onLoad={() => setLoaded(true)}
-      />
-    </div>
-  )
+            {/* Main image */}
+            <img
+                ref={mainImgRef}
+                src={main}
+                alt={alt}
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"
+                    }`}
+                onLoad={() => setLoaded(true)}
+            />
+        </div>
+
+    )
 }
 
 export default ThumbImage
