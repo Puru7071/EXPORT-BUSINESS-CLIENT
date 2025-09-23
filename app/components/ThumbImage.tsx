@@ -35,7 +35,9 @@ const ThumbImage = ({ main, thumbnail, alt, className = "" }: HeroInterface) => 
         ref={mainImgRef}
         src={main}
         alt={alt}
-        className="w-full h-full object-cover"
+        className={`w-full h-full object-cover transition-opacity duration-500  ${
+            loaded ? "opacity-100" : "opacity-0"
+        }`}
         onLoad={() => setLoaded(true)}
       />
     </div>
