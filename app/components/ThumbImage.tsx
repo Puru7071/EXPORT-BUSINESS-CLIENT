@@ -1,46 +1,32 @@
 "use client"
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useState } from "react"
 
 interface HeroInterface {
-    main: string
-    thumbnail: string
-    alt: string
-    className?: string
+  main: string
+  thumbnail: string
+  alt: string
+  className?: string
 }
 
 const ThumbImage = ({ main, thumbnail, alt, className = "" }: HeroInterface) => {
-    const [loaded, setLoaded] = useState(false)
-    const mainImgRef = useRef<HTMLImageElement | null>(null)
+  const [loaded, setLoaded] = useState(false)
 
-    useEffect(() => {
-        if (mainImgRef.current?.complete) {
-            // if already cached, mark as loaded
-            setLoaded(true)
-        }
-    }, [])
+  // Preload main image
+  useEffect(() => {
+    const img = new Image()
+    img.src = main
+    img.onload = () => setLoaded(true)
+  }, [main])
 
-    return (
-        <div className={`relative w-full aspect-[4/3] overflow-hidden ${className}`}>
-            {/* Thumbnail */}
-            <img
-                src={thumbnail}
-                alt={`${alt} thumbnail`}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${loaded ? "opacity-0" : "opacity-100"
-                    }`}
-            />
-
-            {/* Main image */}
-            <img
-                ref={mainImgRef}
-                src={main}
-                alt={alt}
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${loaded ? "opacity-100" : "opacity-0"
-                    }`}
-                onLoad={() => setLoaded(true)}
-            />
-        </div>
-
-    )
+  return (
+    <div
+      className={`w-full h-full bg-center bg-cover transition-opacity duration-700 ${className}`}
+      style={{
+        backgroundImage: `url(${loaded ? main : thumbnail})`,
+      }}
+      aria-label={alt}
+    />
+  )
 }
 
 export default ThumbImage
