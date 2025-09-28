@@ -5,8 +5,8 @@ import Motivator from "./Motivator"
 const AboutSection = () => {
   return (
     <div className="w-full h-auto bg-white px-20 py-15 pb-2 flex flex-row gap-15">
-        <Motivator/>
-        <About/>
+      <About/>
+      <Motivator/>
     </div>
   )
 }

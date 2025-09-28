@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { reviews } from '@/app/utils'
 import LazyImage from '@/app/components/LazyImage'
 import { TiStarFullOutline } from "react-icons/ti";
+import SectionHeading from '@/app/components/SectionHeading';
 
 export interface Review {
     id: string;
@@ -54,7 +55,7 @@ const Card = ({ data, position }: { data: Review, position: string }) => {
                 </div>
             </div>
         </div>
-        <div className=' text-justify'>
+        <div className='text-justify'>
             {data.review}
         </div>
         <div className='w-24 h-12 absolute bottom-1 right-10'>
@@ -92,12 +93,8 @@ const ReviewSection = () => {
     }, [length]);
     return (
         <div className='w-full h-auto pb-10 bg-white'>
-            {/* <h1 className='text-3xl font-bold mb-15 px-18 pt-2 w-full'>
-                <span className='border-b-4 border-amber-600 w-[30%] block pb-2 text-amber-600'>
-                    What Our Customers Say ?
-                </span>
-            </h1> */}
-            <div className='w-full flex h-56 flex-row justify-center flex-nowrap gap-0 pt-2 pb-10 relative'>
+            <SectionHeading heading="HEAR FROM OUR CUSTOMERS" className='px-20 pt-10 mb-2'/>
+            <div className='w-full flex h-56 flex-row justify-center flex-nowrap gap-0 pt-0 pb-10 relative mb-10'>
                 <Card data={reviews[prevIndex]} position='left' />
                 <Card data={reviews[curIndex]} position='center' />
                 <Card data={reviews[nextIndex]} position='right' />

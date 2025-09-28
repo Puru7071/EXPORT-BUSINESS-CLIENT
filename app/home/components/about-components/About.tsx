@@ -1,36 +1,16 @@
-import { MdLibraryBooks } from "react-icons/md";
-import { FaQuestion } from "react-icons/fa";
-import { ReactElement } from "react";
-import { GoCheckCircleFill } from "react-icons/go";
-import { punchLines } from "@/app/utils";
-
-const PunchLineCard = ({ text }: { text: string }): ReactElement => {
-    return <div className="h-34 bg-[#fefae0]  rounded-xl flex flex-col relative items-center justify-start">
-        <GoCheckCircleFill className="text-green-500 text-4xl relative -top-4" />
-
-        <div className="w-full text-center font-bold">
-            {text}
-        </div>
-    </div>
-}
+import SectionHeading from "@/app/components/SectionHeading"
 
 const About = () => {
     return (
-        <div className="w-[55%]">
-            <div className="grid grid-cols-4 gap-2 mb-8">
-                {punchLines.map((line, index) => <PunchLineCard key={`PUNCH-LINE-${index}`} text={line} />)}
-            </div>
-            <h1 className="text-xl font-[500] pb-2 w-[25%] border-b-3 flex flex-row gap-2 text-amber-600 mb-4">
-                <MdLibraryBooks className="relative top-1.5" /> About Us
-            </h1>
-            <p className="text-gray-500 font-[500] text-justify mb-4">
-                At Bhargav Trading Co., we bring the richness of Indian craftsmanship and culinary heritage to markets worldwide. From premium spices to handcrafted wooden decor, soft cotton textiles, and eco-friendly paper goods — we offer products marked by quality, culture, and reliability.
-            </p>
-            <h1 className="text-xl font-[500] pb-2 w-[25%] border-b-3 flex flex-row gap-2 text-amber-600 mb-4">
-                <FaQuestion className="relative top-1.5" /> Who We Are
-            </h1>
-            <p className="text-gray-500 font-[500] text-justify mb-8">
-                We are a family-run business with <b>three generations of experience in global trade</b>. Our operations span sourcing from trusted artisans and farms, rigorous quality control, and modern packaging and export standards. Whether you’re a retailer, distributor, or importer, our goal is to deliver value, trust, and long-term partnership.
+        <div className="w-[55%] py-10">
+            <SectionHeading heading = {"BHARGAV TRADING CO."} />
+            <p className="text-gray-500 text-xl font-[500] text-justify mb-4">
+                At Bhargav Trading Co., we bring the richness of India’s craftsmanship and culinary heritage to markets across the globe. From premium spices and soft cotton textiles to handcrafted wooden decor and eco-friendly paper products, our offerings reflect quality, authenticity, and tradition. 
+                
+                <br></br>
+                <br></br>
+                
+                As a family-run business with three generations of experience in global trade, we carefully source products from trusted artisans and farms, apply rigorous quality control, and ensure modern packaging and export standards. Whether you are a retailer, distributor, or importer, our mission is to deliver value, reliability, and long-term partnerships, making India’s finest products accessible to the world.
             </p>
         </div>
     )
