@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import DeckGL from "@deck.gl/react";
 import { PathLayer, IconLayer, GeoJsonLayer } from "@deck.gl/layers";
 import { Map } from "@vis.gl/react-maplibre";
@@ -8,7 +8,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import maplibregl from "maplibre-gl";
 
 export default function IndiaCoverageMap() {
-  const [viewState, setViewState] = React.useState({
+  const [viewState, setViewState] = useState({
     longitude: 80,
     latitude: 23,
     zoom: 3.5,
@@ -36,6 +36,7 @@ export default function IndiaCoverageMap() {
     bangladesh: [0, 128, 0],
     bombay: [0, 0, 255],
     karnataka: [255, 165, 0],
+    andhra: [128, 0, 128],
     bhutan: [0, 128, 128],
     nepal: [255, 0, 255],
     kashmir: [43, 199, 255],
@@ -47,6 +48,7 @@ export default function IndiaCoverageMap() {
     bangladesh: 6,
     bombay: 5,
     karnataka: 3,
+    andhra: 2,
     bhutan: 7,
     nepal: 5,
     kashmir: 2.5,
@@ -72,23 +74,37 @@ export default function IndiaCoverageMap() {
     return path;
   };
 
-  const curvedPaths = React.useMemo(() => {
+  const curvedPaths = useMemo(() => {
     const result: Record<string, [number, number][]> = {};
     Object.keys(destinations).forEach((key) => {
-      result[key] = createCurvedPath(
-        yamunanagar,
-        destinations[key],
-        curveOffsets[key]
-      );
+      result[key] = createCurvedPath(yamunanagar, destinations[key], curveOffsets[key]);
     });
     return result;
-  }, [curveOffsets, destinations, yamunanagar]);
+  }, []);
 
-  const layers = React.useMemo(() => {
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    let frame: number;
+    const animate = () => {
+      setProgress((prev) => {
+        if (prev >= 1) return 1;
+        return prev + 0.008;
+      });
+      if (progress < 1) frame = requestAnimationFrame(animate);
+    };
+    animate();
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  const layers = useMemo(() => {
     const pathLayers = Object.keys(curvedPaths).map((key) => {
+      const path = curvedPaths[key];
+      const animatedIndex = Math.floor(progress * (path.length - 1));
+      const animatedPath = path.slice(0, animatedIndex + 1);
+
       return new PathLayer({
         id: `path-${key}`,
-        data: [{ path: curvedPaths[key], color: routeColors[key], width: 4 }],
+        data: [{ path: animatedPath, color: routeColors[key], width: 4 }],
         getPath: (d) => d.path,
         getColor: (d) => d.color,
         getWidth: (d) => d.width,
@@ -103,12 +119,7 @@ export default function IndiaCoverageMap() {
           id: `marker-${key}`,
           data: [{ coordinates: destinations[key] }],
           getPosition: (d) => d.coordinates,
-          getIcon: () => ({
-            url: "/marker.png",
-            width: 128,
-            height: 128,
-            anchorY: 128,
-          }),
+          getIcon: () => ({ url: "/marker.png", width: 128, height: 128, anchorY: 128 }),
           getSize: () => 24,
           sizeScale: 1,
         })
@@ -118,12 +129,7 @@ export default function IndiaCoverageMap() {
       id: "yamunanagar",
       data: [{ coordinates: yamunanagar }],
       getPosition: (d) => d.coordinates,
-      getIcon: () => ({
-        url: "/building.png",
-        width: 128,
-        height: 128,
-        anchorY: 128,
-      }),
+      getIcon: () => ({ url: "/building.png", width: 128, height: 128, anchorY: 128 }),
       getSize: () => 24,
       sizeScale: 1,
     });
@@ -139,20 +145,15 @@ export default function IndiaCoverageMap() {
     });
 
     return [indiaBoundary, ...pathLayers, ...destinationMarkers, startMarker];
-  }, [curvedPaths]);
+  }, [curvedPaths, progress]);
 
   return (
-    <div
-      style={{ position: "relative", width: "500px", height: "500px" }}
-      className="rounded-lg shadow-2xl overflow-hidden"
-    >
+    <div style={{ position: "relative", width: "500px", height: "500px" }} className="rounded-lg shadow-2xl overflow-hidden">
       <DeckGL
         initialViewState={viewState}
-        controller={true}
+        controller
         layers={layers}
-        onViewStateChange={(event) =>
-          setViewState((prev) => ({ ...prev, ...event.viewState }))
-        }
+        onViewStateChange={({ viewState: vs }) => setViewState(vs)}
       >
         <Map
           reuseMaps
