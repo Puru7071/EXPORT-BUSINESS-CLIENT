@@ -5,6 +5,7 @@ import DeckGL from "@deck.gl/react";
 import { PathLayer, IconLayer, GeoJsonLayer } from "@deck.gl/layers";
 import { Map } from "@vis.gl/react-maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
+import maplibregl from 'maplibre-gl';
 
 export default function IndiaCoverageMap() {
   const [viewState, setViewState] = React.useState({
@@ -79,7 +80,7 @@ export default function IndiaCoverageMap() {
       result[key] = createCurvedPath(yamunanagar, destinations[key], curveOffsets[key]);
     });
     return result;
-  }, []);
+  }, [curveOffsets, destinations, yamunanagar]);
 
   // Animation runs only once
   const [progress, setProgress] = React.useState(0);
@@ -174,7 +175,7 @@ export default function IndiaCoverageMap() {
         <Map
           reuseMaps
           mapStyle="https://tiles.openfreemap.org/styles/liberty?region=IND"
-          mapLib={require("maplibre-gl")}
+          mapLib={maplibregl}
         />
       </DeckGL>
     </div>
