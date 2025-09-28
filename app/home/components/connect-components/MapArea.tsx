@@ -1,50 +1,56 @@
-"use client"
-import React, { useRef, useEffect, useState } from 'react'
-import dynamic from 'next/dynamic';
+"use client";
+import React, { useRef, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
+const IndiaCoverageMap = dynamic(() => import("./IndiaCoverageMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-[500px] w-[500px] object-cover opacity-100 transition-all duration-700">
+      <img
+        src="/map-thumbnail.webp"
+        alt="MAP LOADING..."
+        className="w-full h-full object-contain"
+      />
+    </div>
+  ),
+});
 
 const MapArea = () => {
-    const mapCanvasRef = useRef(null);
-    const [mapCanvasVisible, setMapCanvasVisible] = useState<boolean>(false);
-    const IndiaCoverageMap = dynamic(() => import("./IndiaCoverageMap"), {
-        ssr: false ,
-        loading: () => <div 
-            className='h-[500px] w-[500px] object-cover opacity-100 transition-all duration-700'
-        >
-            <img
-                src={"/map-thumbnail.webp"} 
-                alt='MAP LOADING...'
-                className='w-full h-full'
-            />
-        </div>
-    })
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
-    const ObserverCallBack = (enteries : IntersectionObserverEntry[], obs : IntersectionObserver) =>{
-        enteries.forEach((entry) => {
-            if(entry.isIntersecting){
-                setMapCanvasVisible(true) ;
-                obs.unobserve(entry.target) ; 
-            }
-        })
-    }
+  useEffect(() => {
+    if (!containerRef.current) return;
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(ObserverCallBack, { threshold: 0.2 }) ; 
-        if(!!mapCanvasRef.current){
-            observer.observe(mapCanvasRef.current) ;
-        }
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
 
-        return () => observer.disconnect() ;
-    }, [mapCanvasRef])
-    return (
-        <div
-            className='h-[500px] w-[500px] object-contain relative'
-            ref={mapCanvasRef}
-            aria-label="Interactive India Coverage Map showing connections from Yamunanagar to major states and neighboring countries."
-        >
-            {mapCanvasVisible && <IndiaCoverageMap />}
-        </div>
-    )
-}
+    observer.observe(containerRef.current);
 
-export default MapArea
+    return () => observer.disconnect();
+  }, [containerRef]);
+
+  return (
+    <div
+      ref={containerRef}
+      className={`h-[500px] w-[500px] md:h-[600px] md:w-[600px] lg:h-[700px] lg:w-[700px] relative transition-opacity duration-700 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+      aria-label="Interactive India Coverage Map showing connections from Yamunanagar to major states and neighboring countries."
+      style={{ willChange: "transform" }}
+    >
+      {isVisible && <IndiaCoverageMap />}
+    </div>
+  );
+};
+
+export default React.memo(MapArea);
