@@ -77,20 +77,25 @@ export default function IndiaCoverageMap() {
   const curvedPaths = useMemo(() => {
     const result: Record<string, [number, number][]> = {};
     Object.keys(destinations).forEach((key) => {
-      result[key] = createCurvedPath(yamunanagar, destinations[key], curveOffsets[key]);
+      result[key] = createCurvedPath(
+        yamunanagar,
+        destinations[key],
+        curveOffsets[key]
+      );
     });
     return result;
-  }, []);
+  }, [destinations, yamunanagar, curveOffsets]);
 
   const [progress, setProgress] = useState(0);
+
   useEffect(() => {
     let frame: number;
     const animate = () => {
       setProgress((prev) => {
         if (prev >= 1) return 1;
-        return prev + 0.008;
+        return prev + 0.008; // slowed down
       });
-      if (progress < 1) frame = requestAnimationFrame(animate);
+      frame = requestAnimationFrame(animate);
     };
     animate();
     return () => cancelAnimationFrame(frame);
@@ -119,7 +124,12 @@ export default function IndiaCoverageMap() {
           id: `marker-${key}`,
           data: [{ coordinates: destinations[key] }],
           getPosition: (d) => d.coordinates,
-          getIcon: () => ({ url: "/marker.png", width: 128, height: 128, anchorY: 128 }),
+          getIcon: () => ({
+            url: "/marker.png",
+            width: 128,
+            height: 128,
+            anchorY: 128,
+          }),
           getSize: () => 24,
           sizeScale: 1,
         })
@@ -129,7 +139,12 @@ export default function IndiaCoverageMap() {
       id: "yamunanagar",
       data: [{ coordinates: yamunanagar }],
       getPosition: (d) => d.coordinates,
-      getIcon: () => ({ url: "/building.png", width: 128, height: 128, anchorY: 128 }),
+      getIcon: () => ({
+        url: "/building.png",
+        width: 128,
+        height: 128,
+        anchorY: 128,
+      }),
       getSize: () => 24,
       sizeScale: 1,
     });
@@ -145,15 +160,20 @@ export default function IndiaCoverageMap() {
     });
 
     return [indiaBoundary, ...pathLayers, ...destinationMarkers, startMarker];
-  }, [curvedPaths, progress]);
+  }, [curvedPaths, progress, destinations, routeColors, yamunanagar]);
 
   return (
-    <div style={{ position: "relative", width: "500px", height: "500px" }} className="rounded-lg shadow-2xl overflow-hidden">
+    <div
+      style={{ position: "relative", width: "500px", height: "500px" }}
+      className="rounded-lg shadow-2xl overflow-hidden"
+    >
       <DeckGL
         initialViewState={viewState}
         controller
         layers={layers}
-        onViewStateChange={({ viewState: vs }) => setViewState(vs)}
+        onViewStateChange={(info) =>
+          setViewState(info.viewState as typeof viewState)
+        }
       >
         <Map
           reuseMaps
