@@ -5,7 +5,7 @@ import DeckGL from "@deck.gl/react";
 import { PathLayer, IconLayer, GeoJsonLayer } from "@deck.gl/layers";
 import { Map } from "@vis.gl/react-maplibre";
 import "maplibre-gl/dist/maplibre-gl.css";
-import maplibregl from 'maplibre-gl';
+import maplibregl from "maplibre-gl";
 
 export default function IndiaCoverageMap() {
   const [viewState, setViewState] = React.useState({
@@ -27,7 +27,7 @@ export default function IndiaCoverageMap() {
     karnataka: [75, 15],
     bhutan: [90.5, 27.5],
     nepal: [85.3, 27.0],
-    kashmir: [76 , 35],
+    kashmir: [76, 35],
     bihar: [85, 21.0],
   };
 
@@ -36,11 +36,10 @@ export default function IndiaCoverageMap() {
     bangladesh: [0, 128, 0],
     bombay: [0, 0, 255],
     karnataka: [255, 165, 0],
-    andhra: [128, 0, 128],
     bhutan: [0, 128, 128],
     nepal: [255, 0, 255],
-    kashmir:[43, 199, 255],
-    bihar:[200, 255, 255]
+    kashmir: [43, 199, 255],
+    bihar: [200, 255, 255],
   };
 
   const curveOffsets: Record<string, number> = {
@@ -48,11 +47,10 @@ export default function IndiaCoverageMap() {
     bangladesh: 6,
     bombay: 5,
     karnataka: 3,
-    andhra: 2,
     bhutan: 7,
     nepal: 5,
     kashmir: 2.5,
-    bihar: 3
+    bihar: 3,
   };
 
   const createCurvedPath = (
@@ -77,38 +75,20 @@ export default function IndiaCoverageMap() {
   const curvedPaths = React.useMemo(() => {
     const result: Record<string, [number, number][]> = {};
     Object.keys(destinations).forEach((key) => {
-      result[key] = createCurvedPath(yamunanagar, destinations[key], curveOffsets[key]);
+      result[key] = createCurvedPath(
+        yamunanagar,
+        destinations[key],
+        curveOffsets[key]
+      );
     });
     return result;
   }, [curveOffsets, destinations, yamunanagar]);
 
-  // Animation runs only once
-  const [progress, setProgress] = React.useState(0);
-  React.useEffect(() => {
-    let frame: number;
-    const animate = () => {
-      setProgress((prev) => {
-        if (prev >= 1) return 1;
-        return prev + 0.008;
-      });
-      if (progress < 1) {
-        frame = requestAnimationFrame(animate);
-      }
-    };
-    animate();
-    return () => cancelAnimationFrame(frame);
-  }, []);
-
   const layers = React.useMemo(() => {
     const pathLayers = Object.keys(curvedPaths).map((key) => {
-      const path = curvedPaths[key];
-      const len = path.length;
-      const animatedIndex = Math.floor(progress * (len - 1));
-      const animatedPath = path.slice(0, animatedIndex + 1);
-
       return new PathLayer({
         id: `path-${key}`,
-        data: [{ path: animatedPath, color: routeColors[key], width: 4 }],
+        data: [{ path: curvedPaths[key], color: routeColors[key], width: 4 }],
         getPath: (d) => d.path,
         getColor: (d) => d.color,
         getWidth: (d) => d.width,
@@ -123,7 +103,7 @@ export default function IndiaCoverageMap() {
           id: `marker-${key}`,
           data: [{ coordinates: destinations[key] }],
           getPosition: (d) => d.coordinates,
-          getIcon: (d) => ({
+          getIcon: () => ({
             url: "/marker.png",
             width: 128,
             height: 128,
@@ -138,7 +118,7 @@ export default function IndiaCoverageMap() {
       id: "yamunanagar",
       data: [{ coordinates: yamunanagar }],
       getPosition: (d) => d.coordinates,
-      getIcon: (d) => ({
+      getIcon: () => ({
         url: "/building.png",
         width: 128,
         height: 128,
@@ -150,16 +130,16 @@ export default function IndiaCoverageMap() {
 
     const indiaBoundary = new GeoJsonLayer({
       id: "india-boundary",
-      data: "/india.geojson", // from your public folder
+      data: "/india.geojson",
       stroked: true,
       filled: false,
       lineWidthMinPixels: 1.5,
-      getLineColor: [0, 0, 0, 180], // black border
-      getFillColor: [255, 255, 255, 50], // optional transparent fill
+      getLineColor: [0, 0, 0, 180],
+      getFillColor: [255, 255, 255, 50],
     });
 
-    return [ indiaBoundary , ...pathLayers , ...destinationMarkers, startMarker,] ;
-  }, [curvedPaths, progress]);
+    return [indiaBoundary, ...pathLayers, ...destinationMarkers, startMarker];
+  }, [curvedPaths]);
 
   return (
     <div
@@ -170,7 +150,9 @@ export default function IndiaCoverageMap() {
         initialViewState={viewState}
         controller={true}
         layers={layers}
-        onViewStateChange={({ viewState: vs }) => setViewState(vs)}
+        onViewStateChange={(event) =>
+          setViewState((prev) => ({ ...prev, ...event.viewState }))
+        }
       >
         <Map
           reuseMaps

@@ -5,12 +5,18 @@ import dynamic from "next/dynamic";
 const IndiaCoverageMap = dynamic(() => import("./IndiaCoverageMap"), {
   ssr: false,
   loading: () => (
-    <div className="h-[500px] w-[500px] object-cover opacity-100 transition-all duration-700">
+    <div className="relative h-[500px] w-[500px] flex items-center justify-center">
+      {/* Placeholder image */}
       <img
         src="/map-thumbnail.webp"
         alt="MAP LOADING..."
-        className="w-full h-full object-contain"
+        className="w-full h-full object-contain rounded-lg"
       />
+
+      {/* Loader overlay */}
+      <div className="absolute inset-0 flex items-center h-full w-full justify-center bg-white/30 backdrop-blur-sm rounded-lg transition-opacity duration-700 opacity-100">
+        <div className="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+      </div>
     </div>
   ),
 });
@@ -37,7 +43,7 @@ const MapArea = () => {
     observer.observe(containerRef.current);
 
     return () => observer.disconnect();
-  }, [containerRef]);
+  }, []);
 
   return (
     <div
@@ -46,7 +52,7 @@ const MapArea = () => {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       aria-label="Interactive India Coverage Map showing connections from Yamunanagar to major states and neighboring countries."
-      style={{ willChange: "transform" }}
+      style={{ willChange: "opacity" }}
     >
       {isVisible && <IndiaCoverageMap />}
     </div>

@@ -40,7 +40,7 @@ const Card = ({ data, position }: { data: Review, position: string }) => {
                 classes='h-12 w-12 rounded-full'
             />
             <div>
-                <div className=' capitalize'>{data.author}</div>
+                <div className=' capitalize font-bold tracking-widest'>{data.author}</div>
                 <div className='flex flex-row relative -left-0.5'>
                     {Array.from({ length: data.rating }).map((_, i) => (
                         <div key={i} className="w-4 h-4 text-amber-400 rounded">
@@ -94,7 +94,7 @@ const ReviewSection = () => {
     return (
         <div className='w-full h-auto pb-10 bg-white'>
             <SectionHeading heading="HEAR FROM OUR CUSTOMERS" className='px-20 pt-10 mb-2'/>
-            <div className='w-full flex h-56 flex-row justify-center flex-nowrap gap-0 pt-0 pb-10 relative mb-10'>
+            <div className='w-full flex h-56 flex-row justify-center text-gray-500 tracking-wide flex-nowrap gap-0 pt-0 pb-10 relative mb-10'>
                 <Card data={reviews[prevIndex]} position='left' />
                 <Card data={reviews[curIndex]} position='center' />
                 <Card data={reviews[nextIndex]} position='right' />

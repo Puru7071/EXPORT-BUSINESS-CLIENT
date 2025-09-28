@@ -3,10 +3,7 @@ import HeroSection from "./components/hero-components/HeroSection"
 import dynamic from "next/dynamic";
 import ReviewSection from "./components/review-components/ReviewSection";
 import Connect from "./components/connect-components/Connect";
-
-const PortfolioArea = dynamic(() => import("./components/portfolio-component/PortfolioArea"), {
-  loading: () => <div>Loading...</div> 
-})
+import PortfolioArea from "./components/portfolio-component/PortfolioArea";
 
 const page = () => {
   return (

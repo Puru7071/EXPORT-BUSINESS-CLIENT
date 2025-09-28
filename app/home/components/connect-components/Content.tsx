@@ -9,9 +9,9 @@ const Content = () => {
     <div className="relative w-full flex flex-col items-center">
       {/* Card */}
       <div className="w-full max-w-2xl bg-white/80 backdrop-blur-md  p-4 relative z-10">
-        <SectionHeading heading="Send us a message" />
+        <SectionHeading heading="Send us a message"  />
 
-        <div className="mt-8 flex flex-col gap-8">
+        <div className="mt-16 flex flex-col gap-8">
           {/* Email Field */}
           <div className="relative">
             <label className="flex items-center gap-2 text-sm font-semibold text-gray-600 absolute -top-3 left-3 bg-white px-2">
@@ -39,7 +39,7 @@ const Content = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="w-full flex justify-end">
+          <div className="w-full flex justify-end mt-4">
             <button
               className="px-8 py-3 text-white text-lg font-semibold rounded-lg flex items-center gap-2
                 bg-gradient-to-r from-[#0077b6] to-[#0096c7] hover:from-[#0096c7] hover:to-[#00b4d8] 
