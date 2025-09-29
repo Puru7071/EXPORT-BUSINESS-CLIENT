@@ -195,4 +195,4 @@ export const coverage = [
 ]
 
 export const mobile = "9813963287"
-export const email = "bhargav.trading.ltd@gmail.com"
+export const email = "bhargav.trd.co@gmail.com"

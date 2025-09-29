@@ -20,7 +20,7 @@ const SEOContent = () : ReactElement => {
 }
 const Connect = () => {
     return (
-        <div className='w-full h-auto px-20 py-10 bg-white relative flex flex-row gap-10'>
+        <div className='w-full h-auto px-20 py-10 bg-[#f5f5f5] relative flex flex-row gap-10'>
             <MapArea />
             <SEOGenerator ariaLabel="Interactive India Coverage Map showing connections from Yamunanagar to major states and neighboring countries.">
                 {<SEOContent/>}

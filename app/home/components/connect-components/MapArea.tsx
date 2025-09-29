@@ -48,7 +48,7 @@ const MapArea = () => {
   return (
     <div
       ref={containerRef}
-      className={`h-[500px] w-[500px] md:h-[600px] md:w-[600px] lg:h-[700px] lg:w-[700px] relative transition-opacity duration-700 ${
+      className={`h-[500px] w-[500px] relative transition-opacity duration-700 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
       aria-label="Interactive India Coverage Map showing connections from Yamunanagar to major states and neighboring countries."
