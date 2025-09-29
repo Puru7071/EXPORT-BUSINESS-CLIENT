@@ -3,7 +3,7 @@ import MapArea from './MapArea'
 import SEOGenerator from '../../../components/SEOGenerator'
 import Content from './Content'
 
-const SEOContent = () : ReactElement => {
+const SEOContent = (): ReactElement => {
     return (
         <>
             <h2 className="text-2xl font-bold">
@@ -20,12 +20,19 @@ const SEOContent = () : ReactElement => {
 }
 const Connect = () => {
     return (
-        <div className='w-full h-auto px-20 py-10 bg-[#f5f5f5] relative flex flex-row gap-10'>
+        <div
+            className='w-full h-auto px-20 py-20 bg-[#f5f5f5] relative flex flex-row gap-10 bg-contain'
+            style={{
+                backgroundImage: `linear-gradient(rgba(254, 250, 224, 0.6), rgba(254, 250, 224, 0.6)), url('/form-bg.webp')`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+            }}
+        >
             <MapArea />
             <SEOGenerator ariaLabel="Interactive India Coverage Map showing connections from Yamunanagar to major states and neighboring countries.">
-                {<SEOContent/>}
+                {<SEOContent />}
             </SEOGenerator>
-            <Content/>
+            <Content />
         </div>
     )
 }

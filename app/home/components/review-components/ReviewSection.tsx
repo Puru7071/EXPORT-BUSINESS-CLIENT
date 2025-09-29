@@ -92,8 +92,16 @@ const ReviewSection = () => {
         return () => clearInterval(interval);
     }, [length]);
     return (
-        <div className='w-full h-auto pb-10 bg-white'>
-            <SectionHeading heading="HEAR FROM OUR CUSTOMERS" className='px-20 pt-10 mb-2'/>
+        <div
+            className='w-full h-auto pb-10 bg-white'
+            style={{
+                backgroundImage: `linear-gradient(rgba(254, 250, 224, 0.6), rgba(254, 250, 224, 0.6)), url('/review-bg.webp')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'bottom',
+                backgroundRepeat: 'no-repeat',
+            }}
+        >
+            <SectionHeading heading="HEAR FROM OUR CUSTOMERS" className='px-20 pt-10 mb-2' />
             <div className='w-full flex h-56 flex-row justify-center text-gray-500 tracking-wide flex-nowrap gap-0 pt-0 pb-10 relative mb-10'>
                 <Card data={reviews[prevIndex]} position='left' />
                 <Card data={reviews[curIndex]} position='center' />

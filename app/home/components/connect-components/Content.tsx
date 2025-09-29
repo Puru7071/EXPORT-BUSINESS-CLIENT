@@ -125,7 +125,7 @@ const Content = () => {
 
           {/* Name */}
           <div className="relative">
-            <label className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-600 absolute -top-3 left-3 bg-[#f5f5f5] px-2">
+            <label className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-600 absolute -top-3 left-3 bg-[#fbfbe5] px-2">
               <FaUser className="text-[#0077b6]" /> Name
             </label>
             <input
@@ -141,7 +141,7 @@ const Content = () => {
 
           {/* Email */}
           <div className="relative">
-            <label className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-600 absolute -top-3 left-3 bg-[#f5f5f5] px-2">
+            <label className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-600 absolute -top-3 left-3 bg-[#fbfbe5] px-2">
               <MdEmail className="text-[#0077b6]" /> Email
             </label>
             <input
@@ -157,7 +157,7 @@ const Content = () => {
 
           {/* Phone */}
           <div className="relative">
-            <label className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-600 absolute -top-3 left-3 bg-[#f5f5f5] px-2 z-10">
+            <label className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-600 absolute -top-3 left-3 bg-[#fbfbe5] px-2 z-10">
               <MdPhone className="text-[#0077b6]" /> Phone
             </label>
             <PhoneInput
@@ -173,7 +173,7 @@ const Content = () => {
 
           {/* Message */}
           <div className="relative">
-            <label className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-600 absolute -top-3 left-3 bg-[#f5f5f5] px-2">
+            <label className="flex items-center gap-2 text-sm font-bold tracking-wider text-gray-600 absolute -top-3 left-3 bg-[#fbfbe5] px-2">
               <LuMessageSquareText className="text-[#0077b6]" /> Message
             </label>
             <textarea
