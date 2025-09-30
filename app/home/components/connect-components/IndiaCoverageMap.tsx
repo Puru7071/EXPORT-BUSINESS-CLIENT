@@ -9,7 +9,7 @@ export default function IndiaCoverageMap() {
     longitude: 80,
     latitude: 23,
     zoom: 3.3,
-    pitch: 0,
+    pitch: 36,
     bearing: 0,
   };
 
