@@ -20,7 +20,7 @@ const Card = memo(({ title, description, visible, index }: CardProps) => {
             animate={{opacity:[0,0.5,1] , scale:[0,1.1,1] }}
         >
             <div className='flex w-full justify-between'>
-                <span className='text-white text-xl relative top-2 left-4'>{title}</span>
+                <span className='text-white  relative top-2 left-4 lg:text-base xl:text-xl'>{title}</span>
                 <div className='relative -top-1'>
                     <FaBookmark className='text-4xl text-amber-500' />
                     <span className='absolute -top-1 w-full h-full flex justify-center items-center text-white text-base font-[600]'>{index + 1}</span>

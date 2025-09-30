@@ -9,12 +9,12 @@ const VisionComponent = (): ReactElement => {
     return (
         <div className="text-2xl text-white absolute top-0 left-0 w-full h-full  z-4 flex flex-col items-center justify-center gap-4">
             <motion.div 
-                className="flex flex-col justify-between w-[80%] gap-8 p-6 py-3 bg-black/80 rounded-2xl"
+                className="flex flex-col justify-between w-[90%] gap-8 p-6 py-3 bg-black/80 rounded-2xl"
                 initial= {{opacity:0 , scale:0}}
                 animate= {{opacity:[0,0.5,1] , scale:[0,0.4,1]}}
             >
-                <div className="h-52 w-full mx-auto text-xl font-bold text-justify flex items-center justify-center">
-                    <Writer words={visions} typeSpeed={40} delaySpeed={10000} deleteSpeed={40}/>
+                <div className="h-36 w-full mx-auto text-xl font-bold text-justify flex items-center justify-center">
+                    <Writer words={visions} typeSpeed={40} delaySpeed={10000} deleteSpeed={40} spanClass="text-xl"/>
                 </div>
 
                 <div className="w-full flex flex-row justify-end items-center gap-4">

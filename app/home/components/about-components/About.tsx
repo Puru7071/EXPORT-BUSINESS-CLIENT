@@ -4,7 +4,7 @@ const About = () => {
     return (
         <div className="w-[55%] py-10">
             <SectionHeading heading = {"BHARGAV TRADING CO."} />
-            <p className="text-gray-500 text-xl font-[500] text-justify mb-4 tracking-wide">
+            <p className="text-gray-500 text-base font-[600] text-justify mb-4 tracking-wide">
                 At Bhargav Trading Co., we bring the richness of India’s craftsmanship and culinary heritage to markets across the globe. From premium spices and soft cotton textiles to handcrafted wooden decor and eco-friendly paper products, our offerings reflect quality, authenticity, and tradition. 
                 
                 <br></br>

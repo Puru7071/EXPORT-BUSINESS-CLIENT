@@ -3,20 +3,15 @@
 import React, { useState, useEffect, useMemo } from "react";
 import DeckGL from "@deck.gl/react";
 import { PathLayer, IconLayer, GeoJsonLayer } from "@deck.gl/layers";
-import { Map } from "@vis.gl/react-maplibre";
-import "maplibre-gl/dist/maplibre-gl.css";
-import maplibregl from "maplibre-gl";
 
 export default function IndiaCoverageMap() {
-  const [viewState, setViewState] = useState({
+  const viewState = {
     longitude: 80,
     latitude: 23,
-    zoom: 3.5,
+    zoom: 3.3,
     pitch: 0,
     bearing: 0,
-    minZoom: 3,
-    maxZoom: 10,
-  });
+  };
 
   const yamunanagar: [number, number] = [77.3, 30.1];
 
@@ -36,7 +31,6 @@ export default function IndiaCoverageMap() {
     bangladesh: [0, 128, 0],
     bombay: [0, 0, 255],
     karnataka: [255, 165, 0],
-    andhra: [128, 0, 128],
     bhutan: [0, 128, 128],
     nepal: [255, 0, 255],
     kashmir: [43, 199, 255],
@@ -48,7 +42,6 @@ export default function IndiaCoverageMap() {
     bangladesh: 6,
     bombay: 5,
     karnataka: 3,
-    andhra: 2,
     bhutan: 7,
     nepal: 5,
     kashmir: 2.5,
@@ -93,7 +86,7 @@ export default function IndiaCoverageMap() {
     const animate = () => {
       setProgress((prev) => {
         if (prev >= 1) return 1;
-        return prev + 0.008; // slowed down
+        return prev + 0.008;
       });
       frame = requestAnimationFrame(animate);
     };
@@ -153,10 +146,10 @@ export default function IndiaCoverageMap() {
       id: "india-boundary",
       data: "/india.geojson",
       stroked: true,
-      filled: false,
-      lineWidthMinPixels: 1.5,
-      getLineColor: [0, 0, 0, 180],
-      getFillColor: [255, 255, 255, 50],
+      filled: true,
+      lineWidthMinPixels: 2,
+      getLineColor: [50, 50, 50, 200],
+      getFillColor: [240, 248, 255, 220],
     });
 
     return [indiaBoundary, ...pathLayers, ...destinationMarkers, startMarker];
@@ -164,23 +157,19 @@ export default function IndiaCoverageMap() {
 
   return (
     <div
-      style={{ position: "relative", width: "500px", height: "500px" }}
-      className="rounded-lg shadow-2xl overflow-hidden"
+      style={{
+        position: "relative",
+        width: "500px",
+        height: "500px",
+        background:"transparent",
+      }}
+      className="overflow-visible"
     >
       <DeckGL
         initialViewState={viewState}
-        controller
+        controller={false} // ✅ disables all zoom/pan interactions
         layers={layers}
-        onViewStateChange={(info) =>
-          setViewState(info.viewState as typeof viewState)
-        }
-      >
-        <Map
-          reuseMaps
-          mapStyle="https://tiles.openfreemap.org/styles/liberty?region=IND"
-          mapLib={maplibregl}
-        />
-      </DeckGL>
+      />
     </div>
   );
 }

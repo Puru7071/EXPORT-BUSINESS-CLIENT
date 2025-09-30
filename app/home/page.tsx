@@ -8,13 +8,26 @@ import PortfolioArea from "./components/portfolio-component/PortfolioArea";
 const page = () => {
   return (
     <>
-      <HeroSection/>
-      <PortfolioArea/>
-      <AboutSection/>
-      <ReviewSection/>
-      <Connect/>
+      <HeroSection />
+      <PortfolioArea />
+      <AboutSection />
+
+
+
+      <div
+        style={{
+          backgroundImage: `linear-gradient(rgba(254, 250, 224, 0.6), rgba(254, 250, 224, 0.6)), url('/combine-bg.webp')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'bottom',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <ReviewSection />
+        <Connect />
+      </div>
+
     </>
   )
 }
 
-export default page ; 
+export default page; 

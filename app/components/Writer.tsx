@@ -1,9 +1,9 @@
 "use client"
 import { Typewriter } from "react-simple-typewriter"
 
-const Writer = ({words , typeSpeed = 70 , deleteSpeed = 80 , delaySpeed = 1200}: {words : string[] , typeSpeed ?: number , deleteSpeed ?: number , delaySpeed ?: number}) => {
+const Writer = ({words , typeSpeed = 70 , deleteSpeed = 80 , delaySpeed = 1200 , spanClass = ""}: {words : string[] , typeSpeed ?: number , deleteSpeed ?: number , delaySpeed ?: number , spanClass ?: string}) => {
     return (
-        <span className='text-2xl text-gray-200 font-[500]'>
+        <span className={`text-gray-200 font-[500] text-2xl ${spanClass}`}>
             <Typewriter
                 words={words}
                 loop={1}
