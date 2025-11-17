@@ -1,4 +1,4 @@
-import LazyImage from "../../../components/LazyImage"
+import LazyImage from "../../../utils-components/LazyImage"
 import VisionComponent from "./VisionComponent"
 
 const Motivator = () => {

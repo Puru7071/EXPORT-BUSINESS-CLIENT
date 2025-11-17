@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 import MapArea from './MapArea'
-import SEOGenerator from '../../../components/SEOGenerator'
+import SEOGenerator from '../../../utils-components/SEOGenerator'
 import Content from './Content'
 
 const SEOContent = (): ReactElement => {

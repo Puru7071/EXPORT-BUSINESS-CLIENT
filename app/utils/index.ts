@@ -60,28 +60,40 @@ export const productCategories = [
     heading: "Dry Spices",
     description: "Our wide range includes turmeric powder, red chili powder, black pepper, cumin seeds, coriander powder, cardamom, cloves, cinnamon sticks, mustard seeds, fennel, fenugreek, bay leaves, star anise, nutmeg, mace, and ginger powder. Fresh, aromatic, and high-quality, our spices are trusted by food businesses, restaurants, and global distributors.",
     imageSlugs: "bulk dry spices, export spices, premium cooking spices",
-    src: "/assets/spices-portfolio.webp"
+    src: "/assets/spices-portfolio.webp",
+    href: "/portfolio/spices"
   },
+  // {
+  //   id: 2,
+  //   heading: "Organic Bio Fertilizers",
+  //   description: "We supply and export premium-quality organic bio fertilizers made from natural sources such as cow dung, compost, and farmyard manure. Rich in essential nutrients and beneficial microbes, our fertilizers improve soil health, increase crop yield, and promote sustainable farming. Ideal for organic agriculture and eco-friendly cultivation practices.",
+  //   imageSlugs: "cow dung manure, organic compost, natural fertilizers export",
+  //   src: "/assets/bio-fertilizers.webp",
+  //   href: "/portfolio/bio-fertilizers"
+  // },
   {
-    id: 2,
+    id: 3,
     heading: "Wooden Crafts",
     description: "Our range includes carved wooden boxes, bowls, trays, kitchen utensils, serving spoons, candle stands, decorative idols, wall hangings, furniture accents, and gift items. Each piece reflects fine craftsmanship, making them ideal for retail shops, wholesale supply, and international export markets.",
     imageSlugs: "handmade wooden decor, wooden handicrafts for export, artisanal wood products",
-    src: "/assets/wooden-handicrafts-portfolio.webp"
-  },
-  {
-    id: 3,
-    heading: "Cotton & Hosiery",
-    description: "Our collection includes printed and plain bedsheets, towels, t-shirts, leggings, cotton trousers, kurtas, kidswear, undergarments, nightwear, socks, and seasonal hosiery items. Designed for comfort and long-lasting use, all products meet international standards for bulk trading and global markets.",
-    imageSlugs: "cotton bedsheets bulk, export cotton clothes, wholesale hosiery products",
-    src: "/assets/hosery-porfolio.webp"
+    src: "/assets/wooden-handicrafts-portfolio.webp",
+    href: "/portfolio/wooden-crafts"
   },
   {
     id: 4,
+    heading: "Cotton & Hosiery",
+    description: "Our collection includes printed and plain bedsheets, towels, t-shirts, leggings, cotton trousers, kurtas, kidswear, undergarments, nightwear, socks, and seasonal hosiery items. Designed for comfort and long-lasting use, all products meet international standards for bulk trading and global markets.",
+    imageSlugs: "cotton bedsheets bulk, export cotton clothes, wholesale hosiery products",
+    src: "/assets/hosery-porfolio.webp",
+    href: "/portfolio/hosiery"
+  },
+  {
+    id: 5,
     heading: "Paper Products",
     description: "Our product line features school and office notebooks, copier paper, registers, diaries, tissue papers, paper napkins, paper towels, toilet rolls, and eco-friendly packaging paper. Manufactured with quality and sustainability in mind, these products serve domestic and international wholesale requirements.",
     imageSlugs: "wholesale paper products, export notebooks, bulk napkins toilet paper",
-    src: "/assets/paper-portfolio.webp"
+    src: "/assets/paper-portfolio.webp",
+    href: "/portfolio/paper-products"
   }
 ];
 
@@ -188,11 +200,20 @@ export const reviews = [
 ]
 
 export const coverage = [
-  {heading : "30+" , subheading : "Cities"},
-  {heading : "3", subHeading : "Continents"},
-  {heading : "10K+ ", subHeading : "Clients"},
-  {heading : "24/7", subHeading : "Connectivity"},
+  { heading: "30+", subheading: "Cities" },
+  { heading: "3", subHeading: "Continents" },
+  { heading: "10K+ ", subHeading: "Clients" },
+  { heading: "24/7", subHeading: "Connectivity" },
 ]
+
+export const creatorInfo = {
+  instagram : "https://www.instagram.com/puru_bhargava_/", 
+  github : "https://github.com/Puru7071", 
+  linkedIn: "https://www.linkedin.com/in/purucodes/" , 
+  number : "7206117092", 
+  portfolio : "https://purubhargava7071.netlify.app/",
+  mail : "puru.bhargava011@gmail.com"
+}
 
 export const mobile = "9813963287"
 export const email = "bhargav.trd.co@gmail.com"

@@ -1,9 +1,9 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { reviews } from '@/app/utils'
-import LazyImage from '@/app/components/LazyImage'
+import LazyImage from '@/app/utils-components/LazyImage'
 import { TiStarFullOutline } from "react-icons/ti";
-import SectionHeading from '@/app/components/SectionHeading';
+import SectionHeading from '@/app/utils-components/SectionHeading';
 
 export interface Review {
     id: string;

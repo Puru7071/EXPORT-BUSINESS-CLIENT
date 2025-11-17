@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from 'next/image';
-import Writer from "../../../components/Writer";
+import Writer from "../../../utils-components/Writer";
 import Achievement from './Achievement';
-import Header from './Header';
 import { SEOAchievement, SEOTypeWriter } from './SEOComponents';
 import Contact from './Contact';
 import { TypeWriterTexts } from '@/app/utils';
-import ThumbImage from '@/app/components/ThumbImage';
+import ThumbImage from '@/app/utils-components/ThumbImage';
+import Header from '@/app/utils-components/Header';
 
 const HeroSection = () => {
   return (

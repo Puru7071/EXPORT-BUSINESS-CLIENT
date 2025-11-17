@@ -1,4 +1,4 @@
-import SectionHeading from "@/app/components/SectionHeading"
+import SectionHeading from "@/app/utils-components/SectionHeading"
 
 const About = () => {
     return (

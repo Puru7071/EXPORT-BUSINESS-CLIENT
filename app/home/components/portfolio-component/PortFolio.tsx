@@ -1,5 +1,5 @@
 import { productCategories } from "@/app/utils"
-import LazyImage from "../../../components/LazyImage"
+import LazyImage from "../../../utils-components/LazyImage"
 import PortFolioDesc from "./PortFolioDesc"
 
 const PortFolio = () => {
@@ -16,7 +16,7 @@ const PortFolio = () => {
 
                 >
                     <LazyImage alt={product.imageSlugs} src={product.src} classes="w-64 h-72 rounded-2xl shadow-2xl " />
-                    <PortFolioDesc heading={product.heading} description={product.description}/>
+                    <PortFolioDesc heading={product.heading} description={product.description} href={product.href}/>
                 </div>
             ))}
 

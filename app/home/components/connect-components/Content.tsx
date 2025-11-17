@@ -1,12 +1,12 @@
 "use client"
-import SectionHeading from '@/app/components/SectionHeading'
+import SectionHeading from '@/app/utils-components/SectionHeading'
 import React, { useState } from 'react'
 import { LuMessageSquareText } from "react-icons/lu";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import { toast } from "sonner";
-import Loader from '@/app/components/Loader';
+import Loader from '@/app/utils-components/Loader';
 import { TbCircleCheckFilled } from "react-icons/tb";
 import { MdCancel, MdPhone } from "react-icons/md";
 import PhoneInput from 'react-phone-number-input'

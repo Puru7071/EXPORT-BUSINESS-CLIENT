@@ -1,9 +1,9 @@
 "use client"
 import { ReactElement} from "react"
 import { visions } from "@/app/utils"
-import LazyImage from "@/app/components/LazyImage";
+import LazyImage from "@/app/utils-components/LazyImage";
 import { motion } from "framer-motion";
-import Writer from "@/app/components/Writer";
+import Writer from "@/app/utils-components/Writer";
 
 const VisionComponent = (): ReactElement => {
     return (

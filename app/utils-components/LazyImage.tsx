@@ -2,11 +2,29 @@
 import { useState, useRef, useEffect, type ReactElement } from "react"
 import Image from "next/image";
 
+type LazyImageProps = {
+  alt: string;
+  src: string;
+  classes?: string;
+  children?: ReactElement | null;
+  priority?: boolean;
+  direct?: boolean;
+  hoverAnimation?: boolean
+};
+
 const Skeleton = () => {
     return <div className="h-full w-full bg-black/10 animate-pulse absolute inset-0 z-2"></div>
 }
 
-const LazyImage = ({ alt, src , classes = "" , children = null , priority = false , direct = false}: { alt: string, src: string , classes ?: string , children ?: ReactElement | null , priority ?: boolean , direct ?: boolean}) => {
+const LazyImage = ({ 
+    alt, 
+    src , 
+    classes = "" , 
+    children = null , 
+    priority = false , 
+    direct = false , 
+    hoverAnimation = true , 
+}: LazyImageProps) => {
     const [visible, setVisible] = useState<boolean>(false) ;
     const [loading , setLoading] = useState<boolean>(true) ; 
     const imgRef = useRef(null);
@@ -40,7 +58,7 @@ const LazyImage = ({ alt, src , classes = "" , children = null , priority = fals
                 fill
                 priority={priority}
                 alt={alt}
-                className={`object-cover z-1 transition-all ease-in-out duration-500 cursor-pointer hover:scale-110 ${loading ? "opacity-0" : "opacity-100"}`}
+                className={`object-cover z-1 transition-all ease-in-out duration-500 cursor-pointer ${hoverAnimation && "hover:scale-110"} ${loading ? "opacity-0" : "opacity-100"}`}
                 onLoadingComplete={() => setLoading(false)}
             />}
 
