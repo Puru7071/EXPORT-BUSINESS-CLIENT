@@ -42,15 +42,15 @@ export const HeroHeaders = [
   },
   {
     displayName: "Our Products",
-    url: "/products"
+    url: "/coming-soon"
   },
   {
     displayName: "Contact",
-    url: "/contact"
+    url: "/coming-soon"
   },
   {
     displayName: "About us",
-    url: "/about"
+    url: "/coming-soon"
   }
 ]
 
@@ -72,12 +72,20 @@ export const productCategories = [
   //   href: "/portfolio/bio-fertilizers"
   // },
   {
+    id: 5,
+    heading: "Paper Products",
+    description: "Our product line features school and office notebooks, copier paper, registers, diaries, tissue papers, paper napkins, paper towels, toilet rolls, and eco-friendly packaging paper. Manufactured with quality and sustainability in mind, these products serve domestic and international wholesale requirements.",
+    imageSlugs: "wholesale paper products, export notebooks, bulk napkins toilet paper",
+    src: "/assets/paper-portfolio.webp",
+    href: "/portfolio/paper-products"
+  },
+  {
     id: 3,
     heading: "Wooden Crafts",
     description: "Our range includes carved wooden boxes, bowls, trays, kitchen utensils, serving spoons, candle stands, decorative idols, wall hangings, furniture accents, and gift items. Each piece reflects fine craftsmanship, making them ideal for retail shops, wholesale supply, and international export markets.",
     imageSlugs: "handmade wooden decor, wooden handicrafts for export, artisanal wood products",
     src: "/assets/wooden-handicrafts-portfolio.webp",
-    href: "/portfolio/wooden-crafts"
+    href: "/coming-soon"
   },
   {
     id: 4,
@@ -85,15 +93,7 @@ export const productCategories = [
     description: "Our collection includes printed and plain bedsheets, towels, t-shirts, leggings, cotton trousers, kurtas, kidswear, undergarments, nightwear, socks, and seasonal hosiery items. Designed for comfort and long-lasting use, all products meet international standards for bulk trading and global markets.",
     imageSlugs: "cotton bedsheets bulk, export cotton clothes, wholesale hosiery products",
     src: "/assets/hosery-porfolio.webp",
-    href: "/portfolio/hosiery"
-  },
-  {
-    id: 5,
-    heading: "Paper Products",
-    description: "Our product line features school and office notebooks, copier paper, registers, diaries, tissue papers, paper napkins, paper towels, toilet rolls, and eco-friendly packaging paper. Manufactured with quality and sustainability in mind, these products serve domestic and international wholesale requirements.",
-    imageSlugs: "wholesale paper products, export notebooks, bulk napkins toilet paper",
-    src: "/assets/paper-portfolio.webp",
-    href: "/portfolio/paper-products"
+    href: "/coming-soon"
   }
 ];
 
