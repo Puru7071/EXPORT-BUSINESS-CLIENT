@@ -19,7 +19,6 @@ type CategoryPortfolioProps = {
     emailButtonColor?: string,
     emailButtonTextColor?: string,
     bannerTextClass?: string,
-    productEmail: string
 }
 
 

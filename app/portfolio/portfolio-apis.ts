@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { db } from "../lib/supabaseClient";
 
 
@@ -13,10 +13,9 @@ async function fetchPortfolioProducts(table : string) {
 }
 
 export function useSpeciesPortfolio(table : string){
-    return useQuery({
+    return useSuspenseQuery({
         queryKey : ['portfolio-items'],
         queryFn : () => fetchPortfolioProducts(table) , 
         staleTime: 60 * 60 * 1000 , 
-        suspense : true 
     })
 }
