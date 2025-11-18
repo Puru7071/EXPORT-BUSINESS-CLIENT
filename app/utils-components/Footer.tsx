@@ -188,7 +188,7 @@ const Footer = () => {
 
             <div className='border-t border-white/10 mt-12 pt-8'>
                 <div className="my-0 text-white mx-auto font-bold gap-2 flex flex-col justify-between">
-                    <span className='text-xl text-center'>Made with ❤️ by <span className='bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent'> Puru Bhargava</span></span>
+                    <span className='text-xl text-center'>Designed & Developed by <a target='_blank' href={creatorInfo.portfolio} className='bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent'> Puru Bhargava</a></span>
                     <div className='flex flex-row gap-2 text-sm w-full text-zinc-400 justify-center'>
                         <a target='_blank' href={`mail:${creatorInfo.mail}`} className='flex flex-row items-center gap-2'> <FaEnvelope /> Email | </a>
                         <a target='_blank' href={`https://wa.me/91${creatorInfo.number}`} className='flex flex-row items-center gap-2'> <FaWhatsapp /> WhatsApp |</a>
