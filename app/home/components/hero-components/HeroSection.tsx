@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image';
 import Writer from "../../../utils-components/Writer";
 import Achievement from './Achievement';
 import { SEOAchievement, SEOTypeWriter } from './SEOComponents';

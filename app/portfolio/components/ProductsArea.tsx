@@ -12,12 +12,21 @@ type ProductsAreaProps = {
     bucket: string
 }
 
+export interface PortfolioItem {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+  isCustomizable?: boolean;
+  customizableTooltipContent?: string | null;
+}
+
 const ProductsArea = ({ table, heading, bucket }: ProductsAreaProps) => {
     const { data: items, isLoading, error } = useSpeciesPortfolio(table);
     return (
         <>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10'>
-                {items?.map((item : any, index : number) => <ProductCard
+                {items?.map((item : PortfolioItem, index : number) => <ProductCard
                     item={item}
                     bucket={`${supabaseUrl}/storage/v1/object/public/${bucket}`}
                     key={`PORTFOLIO-ITEMS-${index}`} 
@@ -28,4 +37,4 @@ const ProductsArea = ({ table, heading, bucket }: ProductsAreaProps) => {
     )
 }
 
-export default ProductsArea
+export default ProductsArea ;

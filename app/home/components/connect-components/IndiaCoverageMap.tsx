@@ -18,42 +18,56 @@ export default function IndiaCoverageMap() {
     maxZoom: 10,
   });
 
-  const yamunanagar: [number, number] = [77.3, 30.1];
+  // ✔ fix #1 - stable point
+  const yamunanagar = useMemo<[number, number]>(() => [77.3, 30.1], []);
 
-  const destinations: Record<string, [number, number]> = {
-    srilanka: [80.7, 7.9],
-    bangladesh: [90.4, 23.8],
-    bombay: [70, 23.5],
-    karnataka: [75, 15],
-    bhutan: [90.5, 27.5],
-    nepal: [85.3, 27.0],
-    kashmir: [76, 35],
-    bihar: [85, 21.0],
-  };
+  // ✔ fix #2 - stable destinations
+  const destinations = useMemo<Record<string, [number, number]>>(
+    () => ({
+      srilanka: [80.7, 7.9],
+      bangladesh: [90.4, 23.8],
+      bombay: [70, 23.5],
+      karnataka: [75, 15],
+      bhutan: [90.5, 27.5],
+      nepal: [85.3, 27.0],
+      kashmir: [76, 35],
+      bihar: [85, 21.0],
+    }),
+    []
+  );
 
-  const routeColors: Record<string, [number, number, number]> = {
-    srilanka: [255, 0, 0],
-    bangladesh: [0, 128, 0],
-    bombay: [0, 0, 255],
-    karnataka: [255, 165, 0],
-    andhra: [128, 0, 128],
-    bhutan: [0, 128, 128],
-    nepal: [255, 0, 255],
-    kashmir: [43, 199, 255],
-    bihar: [200, 255, 255],
-  };
+  // ✔ fix #3 - stable route colors
+  const routeColors = useMemo<Record<string, [number, number, number]>>(
+    () => ({
+      srilanka: [255, 0, 0],
+      bangladesh: [0, 128, 0],
+      bombay: [0, 0, 255],
+      karnataka: [255, 165, 0],
+      andhra: [128, 0, 128],
+      bhutan: [0, 128, 128],
+      nepal: [255, 0, 255],
+      kashmir: [43, 199, 255],
+      bihar: [200, 255, 255],
+    }),
+    []
+  );
 
-  const curveOffsets: Record<string, number> = {
-    srilanka: 7,
-    bangladesh: 6,
-    bombay: 5,
-    karnataka: 3,
-    andhra: 2,
-    bhutan: 7,
-    nepal: 5,
-    kashmir: 2.5,
-    bihar: 3,
-  };
+  // ✔ fix #4 - stable curve offsets
+  const curveOffsets = useMemo<Record<string, number>>(
+    () => ({
+      srilanka: 7,
+      bangladesh: 6,
+      bombay: 5,
+      karnataka: 3,
+      andhra: 2,
+      bhutan: 7,
+      nepal: 5,
+      kashmir: 2.5,
+      bihar: 3,
+    }),
+    []
+  );
+
 
   const createCurvedPath = (
     start: [number, number],

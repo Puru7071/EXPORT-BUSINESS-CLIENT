@@ -3,8 +3,18 @@ import React from 'react'
 import { email } from '@/app/utils'
 import { FcInfo } from "react-icons/fc";
 
+export interface PortfolioItem {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+  isCustomizable?: boolean;
+  customizableTooltipContent?: string | null;
+}
+
+
 type ProductCardProps = {
-    item: any,
+    item: PortfolioItem,
     bucket: string,
 }
 
