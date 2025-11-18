@@ -8,8 +8,6 @@ export default function ComingSoon() {
           We are working on something great. Stay tuned!
         </p>
 
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-black rounded-full animate-spin mx-auto" />
-
         <p className="text-sm text-gray-400 mt-6">© 2025 All rights reserved.</p>
       </div>
     </div>
