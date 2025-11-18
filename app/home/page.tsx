@@ -3,6 +3,7 @@ import HeroSection from "./components/hero-components/HeroSection"
 import ReviewSection from "./components/review-components/ReviewSection";
 import Connect from "./components/connect-components/Connect";
 import PortfolioArea from "./components/portfolio-component/PortfolioArea";
+import Footer from "../utils-components/Footer";
 
 const page = () => {
   return (
@@ -21,6 +22,7 @@ const page = () => {
         <ReviewSection />
         <Connect />
       </div>
+      <Footer/>
 
     </>
   )

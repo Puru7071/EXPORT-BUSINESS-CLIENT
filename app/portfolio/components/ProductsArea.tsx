@@ -22,7 +22,7 @@ export interface PortfolioItem {
 }
 
 const ProductsArea = ({ table, heading, bucket }: ProductsAreaProps) => {
-    const { data: items, isLoading, error } = useSpeciesPortfolio(table);
+    const {data: items} = useSpeciesPortfolio(table);
     return (
         <>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10'>
