@@ -14,7 +14,7 @@ async function fetchPortfolioProducts(table : string) {
 
 export function useSpeciesPortfolio(table : string){
     return useSuspenseQuery({
-        queryKey : ['portfolio-items'],
+        queryKey : [`portfolio-items-${table}`],
         queryFn : () => fetchPortfolioProducts(table) , 
         staleTime: 60 * 60 * 1000 , 
     })

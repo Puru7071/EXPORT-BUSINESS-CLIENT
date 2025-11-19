@@ -1,12 +1,13 @@
 import { HeroHeaders } from '@/app/utils/index';
 import Login from "./Login";
 import Image from "next/image";
+import Link from 'next/link';
 
 
 export default function Header({ isLayout = false }: { isLayout?: boolean }) {
     return (
         <div className={`w-full flex flex-row justify-between items-center ${isLayout ? "w-full px-12 py-6 fixed mx-auto bg-white shadow-[0_2px_2px_rgba(220,220,180,0.2)] z-[100]" : ""}`}>
-            <a href="/home" className="block">
+            <Link href="/home" className="block">
                 <span className={`h-[50px] w-[140px] overflow-hidden flex justify-center items-center rounded-lg ${isLayout ? "shadow-[1px_1px_1px_rgba(0,0,0,0.2)]" : ""}`}>
                     <Image
                         src="/assets/logo.webp"
@@ -17,7 +18,7 @@ export default function Header({ isLayout = false }: { isLayout?: boolean }) {
                         unoptimized={process.env.NODE_ENV === 'development'} // Optional: helps with dev mode
                     />
                 </span>
-            </a>
+            </Link>
 
             <div className={`flex flex-row justify-between items-center h-full w-[45%] font-bold ${isLayout ? "text-gray-500" : "text-white"}`}>
                 <>
