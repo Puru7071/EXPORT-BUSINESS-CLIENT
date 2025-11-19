@@ -6,9 +6,9 @@ const page = () => {
   return (
     <CategoryPortfolio
         bannerText='From Office Desks to Dining Tables - Quality Paper Products.'
-        bannerColor='bg-[#fefae0]'
-        bannerTextClass='text-black'
-        emailButtonColor='bg-[#ff9f1c]'
+        bannerColor='bg-[#EBF2FA]'
+        bannerTextClass='text-[black]'
+        emailButtonColor='bg-[#05668D]'
         bannerHref='/assets/banners/paper.png'
         bannerAlt='BANNER-IMAGE-PAPER-BHARGAV-TRADING-CO'
         table='paper_portfolio'

@@ -10,8 +10,6 @@ export default async function Layout({ children }: { children: React.ReactNode }
 
   const { isDesktop, desktopOS } = getDesktopInfo(userAgent);
 
-  console.log("desktopOS : ", desktopOS);
-
   return (
     <div className={desktopOS === 'macOS' ? "" : "zoom-85"}>
       <Header isLayout={true} />
