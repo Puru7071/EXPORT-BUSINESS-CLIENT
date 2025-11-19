@@ -28,6 +28,9 @@ body::-webkit-scrollbar-thumb
 .zoom-85{
   zoom: 0.85;
 }
+.zoom-120{
+	zoom: 1.2;
+}
 
 
 @keyframes loadingBar {
