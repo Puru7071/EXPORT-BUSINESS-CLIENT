@@ -7,7 +7,7 @@ const page = () => {
     <CategoryPortfolio
         bannerText='From Office Desks to Dining Tables - Quality Paper Products.'
         bannerColor='bg-[#fefae0]'
-        bannerTextClass='text-zinc-600'
+        bannerTextClass='text-black'
         emailButtonColor='bg-[#ff9f1c]'
         bannerHref='/assets/banners/paper.png'
         bannerAlt='BANNER-IMAGE-PAPER-BHARGAV-TRADING-CO'

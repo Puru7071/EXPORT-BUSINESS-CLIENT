@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function GlobalLoader() {
     return (
         <div
-            className="w-screen h-screen flex flex-col justify-center items-center gap-10 bg-cover bg-center bg-no-repeat relative"
+            className="w-screen h-screen absolute top-0 left-0 flex flex-col justify-center items-center gap-10 bg-cover bg-center bg-no-repeat "
             style={{ backgroundImage: "url('/loading-bg.webp')" }}
         >
             {/* Light overlay for readability */}
