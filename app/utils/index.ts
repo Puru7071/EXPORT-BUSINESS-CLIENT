@@ -215,5 +215,5 @@ export const creatorInfo = {
   mail : "puru.bhargava011@gmail.com"
 }
 
-export const mobile = "9813963287"
+export const mobile = "8901264564"
 export const email = "bhargav.trd.co@gmail.com"

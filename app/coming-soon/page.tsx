@@ -8,7 +8,7 @@ export default function ComingSoon() {
           We are working on something great. Stay tuned!
         </p>
 
-        <p className="text-sm text-gray-400 mt-6">© 2025 All rights reserved.</p>
+        <p className="text-sm text-gray-400 mt-6">© Bhargav Trading Co.</p>
       </div>
     </div>
   );

@@ -131,7 +131,7 @@ const Footer = () => {
                                 </svg>
                             </div>
                             <a
-                                href={email}
+                                href={`mailto:${email}`}
                                 className="text-gray-300 hover:text-white transition-colors duration-300 flex-1"
                             >
                                 {email}
@@ -190,13 +190,13 @@ const Footer = () => {
                 <div className="my-0 text-white mx-auto font-bold gap-2 flex flex-col justify-between">
                     <span className='text-xl text-center'>Designed & Developed by <a target='_blank' href={creatorInfo.portfolio} className='bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent'> Puru Bhargava</a></span>
                     <div className='flex flex-row gap-2 text-sm w-full text-zinc-400 justify-center'>
-                        <a target='_blank' href={`mail:${creatorInfo.mail}`} className='flex flex-row items-center gap-2'> <FaEnvelope /> Email | </a>
-                        <a target='_blank' href={`https://wa.me/91${creatorInfo.number}`} className='flex flex-row items-center gap-2'> <FaWhatsapp /> WhatsApp |</a>
-                        <a target='_blank' href={creatorInfo.instagram} className='flex flex-row items-center gap-2'> <FaInstagram /> Instagram | </a>
-                        <a target='_blank' href={creatorInfo.linkedIn} className='flex flex-row items-center gap-2'> <FaLinkedin /> LinkedIn | </a>
-                        <a target='_blank' href={creatorInfo.github} className='flex flex-row items-center gap-2'> <FaGithub /> GitHub | </a>
-                        <a target='_blank' href={`tel:+91 ${creatorInfo.number}`} className='flex flex-row items-center gap-2'> <FaPhoneAlt /> +91 {creatorInfo.number} | </a>
-                        <a target='_blank' href={creatorInfo.portfolio} className='flex flex-row items-center gap-2'> <FaAddressCard /> Portfolio </a>
+                        <a href={`mailto:${creatorInfo.mail}`} className='flex flex-row items-center gap-2'> <FaEnvelope /> Email | </a>
+                        <a href={`https://wa.me/91${creatorInfo.number}`} className='flex flex-row items-center gap-2'> <FaWhatsapp /> WhatsApp |</a>
+                        <a href={creatorInfo.instagram} className='flex flex-row items-center gap-2'> <FaInstagram /> Instagram | </a>
+                        <a href={creatorInfo.linkedIn} className='flex flex-row items-center gap-2'> <FaLinkedin /> LinkedIn | </a>
+                        <a href={creatorInfo.github} className='flex flex-row items-center gap-2'> <FaGithub /> GitHub | </a>
+                        <a href={`tel:+91 ${creatorInfo.number}`} className='flex flex-row items-center gap-2'> <FaPhoneAlt /> +91 {creatorInfo.number} | </a>
+                        <a href={creatorInfo.portfolio} className='flex flex-row items-center gap-2'> <FaAddressCard /> Portfolio </a>
                     </div>
                 </div>
             </div>

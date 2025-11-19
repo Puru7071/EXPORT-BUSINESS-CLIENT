@@ -5,7 +5,7 @@ import CategoryPortfolio from '../components/Portfolio'
 const page = () => {
   return (
     <CategoryPortfolio
-        bannerText='From Office Desks to Dining Tables - Quality Paper Products You Can Trust.'
+        bannerText='From Office Desks to Dining Tables - Quality Paper Products.'
         bannerColor='bg-[#fefae0]'
         bannerTextClass='text-zinc-600'
         emailButtonColor='bg-[#ff9f1c]'

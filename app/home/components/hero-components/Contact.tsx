@@ -9,7 +9,7 @@ const Contact = () => {
                 <FaPhoneAlt/> Contact Us
             </a>
 
-            <a href={`mail:${email}`} className="px-6 py-3 text-white text-xl rounded-lg font-bold cursor-pointer flex justify-center items-center gap-2 bg-amber-500">
+            <a href={`mailto:${email}`} className="px-6 py-3 text-white text-xl rounded-lg font-bold cursor-pointer flex justify-center items-center gap-2 bg-amber-500">
                 <MdEmail/> Email Us
             </a>
 
