@@ -20,7 +20,7 @@ const VisionComponent = (): ReactElement => {
                 <div className="w-full flex flex-row justify-end items-center gap-4">
                     <LazyImage
                         alt="COMPANY DIRECTOR PHOTO"
-                        src="/assets/director.webp"
+                        src="/assets/teams/Atul_Bhargava_CEO.png"
                         classes="h-10 w-10 rounded-full overflow-hidden"
                     />
                     <span className="text-base text-white font-bold flex flex-col justify-center gap-0.5 h-12">

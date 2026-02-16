@@ -214,6 +214,33 @@ export const creatorInfo = {
   portfolio : "https://purubhargava7071.netlify.app/",
   mail : "puru.bhargava011@gmail.com"
 }
+export const team = [
+  {
+    name : "Mr. Atul Bhargav" , 
+    designation: "CEO @Bhargav Trading Co.",
+    url:"/assets/teams/Atul_Bhargava_CEO.png"
+  },
+  {
+    name : "Mr. Joginder Pal Soni" , 
+    designation: "Sales Head",
+    url:"/assets/teams/Joginder_Pal_Soni_Sales_Lead.png"
+  },
+  {
+    name : "Mr. Navneet Bhatia" , 
+    designation: "Staff Manager",
+    url: "/assets/teams/Navneet_Bhatia_staff_manager.png"
+  } ,
+  {
+    name : "Mr. Abhinandan Bhatia" , 
+    designation: "Finance Head",
+    url: "/assets/teams/Abhinandan_bhatia_Fiance_Head.png"
+  } , 
+  {
+    name : "Mr. Gourav Singh" , 
+    designation: "Inventory Manager" , 
+    url: "/assets/teams/Gaurav_kumar_Inventory_manager.png"
+  }
+]
 
 export const mobile = "8901264564"
 export const email = "bhargav.trd.co@gmail.com"

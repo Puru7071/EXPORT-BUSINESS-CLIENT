@@ -4,6 +4,7 @@ import ReviewSection from "./components/review-components/ReviewSection";
 import Connect from "./components/connect-components/Connect";
 import PortfolioArea from "./components/portfolio-component/PortfolioArea";
 import Footer from "../utils-components/Footer";
+import MeetOurTeam from "./components/meet-our-team/MeetOurTeam";
 
 const page = () => {
   return (
@@ -11,6 +12,7 @@ const page = () => {
       <HeroSection />
       <PortfolioArea />
       <AboutSection />
+      <MeetOurTeam/>
       <div
         style={{
           backgroundImage: `linear-gradient(rgba(254, 250, 224, 0.6), rgba(254, 250, 224, 0.6)), url('/combine-bg.webp')`,
