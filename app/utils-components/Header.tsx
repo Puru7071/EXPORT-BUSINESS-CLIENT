@@ -27,7 +27,7 @@ export default function Header({ isLayout = false , zoom = false }: { isLayout?:
                             {header.displayName}
                         </Link>
                     )}
-                    <Login isLayout={isLayout} />
+                    {/* <Login isLayout={isLayout} /> */}
                 </>
             </div>
 
