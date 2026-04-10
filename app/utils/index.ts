@@ -63,6 +63,14 @@ export const productCategories = [
     src: "/assets/spices-portfolio.webp",
     href: "/portfolio/spices"
   },
+  {
+    id: 2,
+    heading: "Food Commodities",
+    description: "We supply and export essential food commodities including basmati and non-basmati rice, wheat and flour, pulses and lentils, sugar, salt, edible oils, and staple grains. Sourced for consistency and bulk trade, our commodities meet the needs of distributors, processors, and institutional buyers across international markets.",
+    imageSlugs: "bulk rice export, wholesale pulses grains, food commodities trading",
+    src: "/assets/food-commodities-portfolio.webp",
+    href: "/portfolio/food-commodities"
+  },
   // {
   //   id: 2,
   //   heading: "Organic Bio Fertilizers",
