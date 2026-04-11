@@ -15,6 +15,7 @@ const page = () => {
       table="food_commodities_portfolio"
       heading="Few of Our Food Commodities"
       bucket="images-food-commodities"
+      cover={false}
     />
   )
 }

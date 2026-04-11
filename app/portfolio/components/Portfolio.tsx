@@ -19,6 +19,7 @@ type CategoryPortfolioProps = {
     emailButtonColor?: string,
     emailButtonTextColor?: string,
     bannerTextClass?: string,
+    cover?: boolean
 }
 
 
@@ -34,6 +35,7 @@ const CategoryPortfolio = ({
     emailButtonColor = "bg-[#013d27]",
     emailButtonTextColor = "text-[white]",
     bannerTextClass = "",
+    cover=true
 }: CategoryPortfolioProps) => {
     return (
         <>
@@ -46,6 +48,7 @@ const CategoryPortfolio = ({
                 emailButtonColor={emailButtonColor}
                 emailButtonTextColor={emailButtonTextColor}
                 bannerTextClass={bannerTextClass}
+                cover={cover}
             />
             <div className='w-full mx-auto px-12 py-8'>
                 <SectionHeading

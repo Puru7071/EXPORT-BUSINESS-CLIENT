@@ -10,7 +10,8 @@ type BannerProps = {
     bannerAlt: string,
     emailButtonColor?: string,
     emailButtonTextColor ?: string
-    mail: string
+    mail: string 
+    cover?: boolean
 }
 
 const Banner = ({
@@ -21,7 +22,8 @@ const Banner = ({
     emailButtonColor = "bg-[#013d27]",
     emailButtonTextColor = "text-[white]",
     mail,
-    bannerAlt
+    bannerAlt,
+    cover = true,
 }: BannerProps) => {
     return (
         <div className={`w-full h-108 ${bannerColor} flex flex-row justify-between`}>
@@ -39,7 +41,7 @@ const Banner = ({
                     alt={bannerAlt}
                     src={bannerHref}
                     classes='h-[100%] w-[100%]'
-                    cover={false}
+                    cover={cover}
                     direct
                     hoverAnimation={false}
                 />

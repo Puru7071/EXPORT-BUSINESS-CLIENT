@@ -13,6 +13,7 @@ const page = () => {
             table="species_portfolio"
             heading="Discover Our Range of Spices"
             bucket='images-spices-portfolio'
+            cover={true}
         />
     )
 }

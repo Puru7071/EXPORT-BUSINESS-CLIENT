@@ -42,15 +42,15 @@ export const HeroHeaders = [
   },
   {
     displayName: "Our Products",
-    url: "/coming-soon"
+    url: "/home#our-products"
   },
   {
     displayName: "Contact",
-    url: "/coming-soon"
+    url: "/home#contact"
   },
   {
     displayName: "About us",
-    url: "/coming-soon"
+    url: "/home#about"
   }
 ]
 

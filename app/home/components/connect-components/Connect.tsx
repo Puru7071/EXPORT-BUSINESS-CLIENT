@@ -21,7 +21,8 @@ const SEOContent = (): ReactElement => {
 const Connect = () => {
     return (
         <div
-            className='w-full h-auto px-20 py-20 relative flex flex-row gap-10 bg-contain'
+            id="contact"
+            className='w-full h-auto px-20 py-20 relative flex flex-row gap-10 bg-contain scroll-mt-24'
             // style={{
             //     backgroundImage: `linear-gradient(rgba(254, 250, 224, 0.6), rgba(254, 250, 224, 0.6)), url('/form-bg.webp')`,
             //     backgroundSize: 'cover',
