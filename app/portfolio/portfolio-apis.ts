@@ -9,7 +9,16 @@ async function fetchPortfolioProducts(table : string) {
 
     if(error) throw new Error(error.message) ; 
 
-    return data ; 
+    if (!Array.isArray(data) || data.length === 0) return data;
+
+    const first = data[0] as Record<string, unknown>;
+    if (!('category' in first)) return data;
+
+    return [...data].sort((a, b) => {
+        const aCat = String((a as Record<string, unknown>).category ?? '');
+        const bCat = String((b as Record<string, unknown>).category ?? '');
+        return aCat.localeCompare(bCat, undefined, { sensitivity: 'base' });
+    });
 }
 
 export function useSpeciesPortfolio(table : string){

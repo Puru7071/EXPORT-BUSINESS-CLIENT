@@ -9,7 +9,9 @@ type LazyImageProps = {
   children?: ReactElement | null;
   priority?: boolean;
   direct?: boolean;
-  hoverAnimation?: boolean
+  hoverAnimation?: boolean;
+  imageClasses?: string;
+  cover?: boolean
 };
 
 const Skeleton = () => {
@@ -24,6 +26,8 @@ const LazyImage = ({
     priority = false , 
     direct = false , 
     hoverAnimation = true , 
+    imageClasses = "",
+    cover = true
 }: LazyImageProps) => {
     const [visible, setVisible] = useState<boolean>(false) ;
     const [loading , setLoading] = useState<boolean>(true) ; 
@@ -58,7 +62,7 @@ const LazyImage = ({
                 fill
                 priority={priority}
                 alt={alt}
-                className={`object-cover z-1 transition-all ease-in-out duration-500 cursor-pointer ${hoverAnimation && "hover:scale-110"} ${loading ? "opacity-0" : "opacity-100"}`}
+                className={`${imageClasses} ${cover ? "object-cover" : ""} z-1 transition-all ease-in-out duration-500 cursor-pointer ${hoverAnimation && "hover:scale-110"} ${loading ? "opacity-0" : "opacity-100"}`}
                 onLoadingComplete={() => setLoading(false)}
             />}
 

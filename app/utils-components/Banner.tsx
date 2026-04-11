@@ -29,7 +29,7 @@ const Banner = ({
                 <div className={`text-[#0e3221] font-bold text-6xl leading-18 ${bannerTextClass}`}>
                     {bannerText}
                 </div>
-                <a className={`${emailButtonColor} w-48 ${emailButtonTextColor} text-2xl font-[600] rounded-lg px-8 py-3 mt-12 cursor-pointer flex flex-row justify-between items-center gap-2`} href={mail}>
+                <a className={`${emailButtonColor} w-48 ${emailButtonTextColor} text-2xl  font-[600] rounded-lg px-8 py-3 mt-12 cursor-pointer flex flex-row justify-between items-center gap-2`} href={mail}>
                     <IoMail/> Email Us
                 </a>
             </div>
@@ -39,6 +39,7 @@ const Banner = ({
                     alt={bannerAlt}
                     src={bannerHref}
                     classes='h-[100%] w-[100%]'
+                    cover={false}
                     direct
                     hoverAnimation={false}
                 />
