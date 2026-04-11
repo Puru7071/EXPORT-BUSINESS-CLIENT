@@ -89,11 +89,11 @@ export const productCategories = [
   },
   {
     id: 3,
-    heading: "Wooden Crafts",
+    heading: "Wooden handicrafts & decors",
     description: "Our range includes carved wooden boxes, bowls, trays, kitchen utensils, serving spoons, candle stands, decorative idols, wall hangings, furniture accents, and gift items. Each piece reflects fine craftsmanship, making them ideal for retail shops, wholesale supply, and international export markets.",
     imageSlugs: "handmade wooden decor, wooden handicrafts for export, artisanal wood products",
     src: "/assets/wooden-handicrafts-portfolio.webp",
-    href: "/coming-soon"
+    href: "/portfolio/wooden-handicrafts-decors"
   },
   {
     id: 4,

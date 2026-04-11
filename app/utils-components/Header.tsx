@@ -1,7 +1,6 @@
 import { HeroHeaders } from '@/app/utils/index';
 import Image from "next/image";
 import Link from 'next/link';
-import { HeroNavLink } from './HeroNavLink';
 
 
 export default function Header({ isLayout = false , zoom = false }: { isLayout?: boolean ,zoom ?: boolean }) {
@@ -23,9 +22,9 @@ export default function Header({ isLayout = false , zoom = false }: { isLayout?:
             <div className={`flex flex-row justify-between items-center h-full w-[45%] font-bold ${isLayout ? "text-gray-500" : "text-white"}`}>
                 <>
                     {HeroHeaders.map((header, index) =>
-                        <HeroNavLink href={header.url} key={`Hero-Header-${index}`} className="cursor-pointer hover:text-amber-600 transition-all duration-200">
+                        <Link href={header.url} key={`Hero-Header-${index}`} className="cursor-pointer hover:text-amber-600 transition-all duration-200">
                             {header.displayName}
-                        </HeroNavLink>
+                        </Link>
                     )}
                     {/* <Login isLayout={isLayout} /> */}
                 </>

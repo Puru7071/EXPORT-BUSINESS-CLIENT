@@ -1,5 +1,5 @@
 import AboutSection from "./components/about-components/AboutSection";
-import HomeHashScroll from "./components/HomeHashScroll";
+// import HomeHashScroll from "./components/HomeHashScroll";
 import HeroSection from "./components/hero-components/HeroSection"
 import ReviewSection from "./components/review-components/ReviewSection";
 import Connect from "./components/connect-components/Connect";
@@ -10,7 +10,7 @@ import MeetOurTeam from "./components/meet-our-team/MeetOurTeam";
 const page = () => {
   return (
     <>
-      <HomeHashScroll />
+      {/* <HomeHashScroll /> */}
       <HeroSection />
       <PortfolioArea />
       <AboutSection />
