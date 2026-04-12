@@ -31,7 +31,7 @@ const Banner = ({
                 <div className={`text-[#0e3221] font-bold text-6xl leading-18 max-md:text-3xl max-md:leading-tight ${bannerTextClass}`}>
                     {bannerText}
                 </div>
-                <a className={`${emailButtonColor} w-40 self-start ${emailButtonTextColor} text-2xl font-[600] rounded-lg px-6 py-3 mt-12 cursor-pointer flex flex-row justify-center items-center gap-2 max-md:mt-0 max-md:w-auto max-md:min-w-36 max-md:text-lg`} href={mail}>
+                <a className={`${emailButtonColor} self-start ${emailButtonTextColor} text-2xl font-[600] rounded-lg px-6 py-3 mt-12 cursor-pointer inline-flex flex-row justify-center items-center gap-3 whitespace-nowrap max-md:mt-0 max-md:min-w-36 max-md:text-lg`} href={mail}>
                     <IoMail/> Email Us
                 </a>
             </div>
