@@ -35,7 +35,7 @@ const InfoButton = ({ content }: { content: string | null | undefined }) => {
 
 const ProductCard = ({ item, bucket }: ProductCardProps) => {
     return (
-        <div className='h-96 w-full p-2 border-[0.2px] border-slate-200 relative'>
+        <div className='h-96 w-full p-2 border-[0.2px] border-slate-200 relative max-md:h-[26rem] max-md:rounded-xl max-md:p-3'>
             <div className='w-full h-[70%] rounded-sm overflow-hidden'>
                 <LazyImage
                     src={`${bucket}${item?.image}`}
@@ -46,10 +46,10 @@ const ProductCard = ({ item, bucket }: ProductCardProps) => {
                     {item.isCustomizable ? <InfoButton content={item.customizableTooltipContent} /> : null}
                 </LazyImage>
             </div>
-            <div className='w-full font-[600] text-slate-700 mt-2 text-xl px-2'>
+            <div className='w-full font-[600] text-slate-700 mt-2 text-xl px-2 max-md:text-lg'>
                 {item?.name?.toUpperCase()}
             </div>
-            <div className='w-full h-8 font-[500] text-slate-500 text-xs mt-1 px-2 text-ellipsis'>
+            <div className='w-full h-8 font-[500] text-slate-500 text-xs mt-1 px-2 text-ellipsis max-md:h-auto max-md:text-sm max-md:leading-relaxed'>
                 {item?.description}
             </div>
 
@@ -60,7 +60,7 @@ const ProductCard = ({ item, bucket }: ProductCardProps) => {
                         : ""
                         }Regards`}
 
-                    className='cursor-pointer font-[600] text-amber-700 text-xs'
+                    className='cursor-pointer font-[600] text-amber-700 text-xs max-md:text-sm'
                 >
                     Get Cost Details
                 </a>

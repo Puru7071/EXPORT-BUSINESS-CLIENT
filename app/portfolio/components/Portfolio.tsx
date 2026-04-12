@@ -51,7 +51,7 @@ const CategoryPortfolio = ({
                 bannerTextClass={bannerTextClass}
                 cover={cover}
             />
-            <div className='w-full mx-auto px-12 py-8'>
+            <div className='w-full mx-auto px-12 py-8 max-md:px-4 max-md:py-6'>
                 <SectionHeading
                     heading={heading}
                 />

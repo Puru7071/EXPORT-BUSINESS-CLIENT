@@ -21,7 +21,7 @@ const ProductSkeleton = ({
     skeletonCardsNumber = 7,
 }: ProductSkeletonProps) => {
     return (
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 mb-12'>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 mb-12 max-md:grid-cols-1 max-md:gap-4'>
             {Array.from({ length: skeletonCardsNumber }).map((_, idx) => (
                 <ProductSkeletonCard key={`SKELETON-${idx}`} />
             ))}

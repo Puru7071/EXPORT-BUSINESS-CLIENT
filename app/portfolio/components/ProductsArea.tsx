@@ -26,7 +26,7 @@ const ProductsArea = ({ table, heading, bucket }: ProductsAreaProps) => {
     const {data: items} = useSpeciesPortfolio(table);
     return (
         <>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 mb-12'>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-10 mb-12 max-md:grid-cols-1 max-md:gap-4'>
                 {items?.map((item : PortfolioItem, index : number) => <ProductCard
                     item={item}
                     bucket={`${supabaseUrl}/storage/v1/object/public/${bucket}`}
