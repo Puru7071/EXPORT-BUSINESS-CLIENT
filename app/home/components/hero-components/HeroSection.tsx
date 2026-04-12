@@ -23,14 +23,15 @@ const HeroSection = async() => {
         thumbnail='/assets/hero-thumbnail.webp'
       />
       <div
-        className='h-full w-full absolute top-0 left-0 bg-black/70 flex flex-col justify-around items-start gap-0 md:px-18 lg:px-18 xl:px-24'
+        className='h-full w-full absolute top-0 left-0 bg-black/70 flex flex-col justify-around items-start gap-0 max-md:px-4 max-md:py-6 md:px-18 lg:px-18 xl:px-24'
       >
         <Header zoom = {desktopOS === 'macOS' ? false : true} />
 
-        <div className={`h-auto w-full flex flex-col justify-start gap-5 ${desktopOS === 'macOS' ? "" : "zoom-85"}`}>
+        <div className={`h-auto w-full flex flex-col justify-start gap-5 max-md:gap-4 ${desktopOS === 'macOS' ? "" : "zoom-85"}`}>
           <div className='flex flex-col text-white relative'>
-            <span className='text-3xl lg:text-5xl font-[600] relative -left-1 mb-2'>Welcome to Bhargav Trading Co.</span>
-            <Writer words={TypeWriterTexts} />
+            <span className='text-3xl lg:text-5xl font-[600] relative -left-1 mb-2 max-md:hidden'>Welcome to Bhargav Trading Co.</span>
+            <span className='text-3xl lg:text-5xl font-[600] relative -left-1 mb-2 md:hidden max-md:text-[2rem] max-md:leading-tight'>Bhargav Trading Co.</span>
+            <Writer words={TypeWriterTexts} spanClass='max-md:text-lg max-md:leading-snug' />
             <SEOTypeWriter />
           </div>
 

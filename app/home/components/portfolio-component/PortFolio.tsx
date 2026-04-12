@@ -4,18 +4,18 @@ import PortFolioDesc from "./PortFolioDesc"
 
 const PortFolio = () => {
     return (
-        <div className="w-[100%] h-auto mx-auto text-center relative">
+        <div className="w-[100%] h-auto mx-auto text-center relative max-md:overflow-x-hidden">
 
-            <h1 className="text-black text-5xl text-center font-bold mb-2 font-sans">Our Products</h1>
-            <h4 className="text-gray-500 text-2xl italic font-[600] mb-20">Quality Products for Wholesale & Export</h4>
+            <h1 className="text-black text-5xl text-center font-bold mb-2 font-sans max-md:text-[1.7rem]">Our Products</h1>
+            <h4 className="text-gray-500 text-2xl italic font-[600] mb-20 max-md:text-base max-md:mb-10">Quality Products for Wholesale & Export</h4>
 
             {productCategories.map((product, index) => (
                 <div
                     key={`PORTFOLIO-PRODUCT-CATEGORIES-${index}`}
-                    className={`flex w-full mb-15 justify-center gap-20 ${index % 2 == 0 ? "flex-row" : "flex-row-reverse"}`}
+                    className={`flex w-full mb-15 justify-center gap-20 max-md:flex-col max-md:items-center max-md:mb-10 max-md:gap-6 ${index % 2 == 0 ? "flex-row" : "flex-row-reverse"}`}
 
                 >
-                    <LazyImage alt={product.imageSlugs} src={product.src} classes="w-64 h-72 rounded-2xl shadow-2xl " />
+                    <LazyImage alt={product.imageSlugs} src={product.src} classes="w-64 h-72 rounded-2xl shadow-2xl max-md:w-full max-md:max-w-[18rem] max-md:h-56 " />
                     <PortFolioDesc heading={product.heading} description={product.description} href={product.href}/>
                 </div>
             ))}

@@ -15,19 +15,21 @@ const Card = memo(({ title, description, visible, index }: CardProps) => {
     return visible ?
         (<motion.div
             key={`Achivement-Hero-Section-${index}`}
-            className='border-0 bg-[#212529]/80 rounded pb-4 relative flex flex-col gap-2'
+            className='border-0 bg-[#212529]/80 rounded pb-4 relative flex h-full flex-col gap-2 max-md:min-h-[8.5rem] max-md:rounded-2xl max-md:border max-md:border-white/10 max-md:bg-black/55 max-md:px-3 max-md:pb-3 max-md:pt-2 max-md:shadow-lg'
             initial={{opacity:0 , scale:0}}
             animate={{opacity:[0,0.5,1] , scale:[0,1.1,1] }}
         >
             <div className='flex w-full justify-between'>
-                <span className='text-white  relative top-2 left-4 lg:text-base xl:text-xl'>{title}</span>
-                <div className='relative -top-1'>
-                    <FaBookmark className='text-4xl text-amber-500' />
-                    <span className='absolute -top-1 w-full h-full flex justify-center items-center text-white text-base font-[600]'>{index + 1}</span>
+                <span className='text-white  relative top-2 left-4 lg:text-base xl:text-xl max-md:static max-md:max-w-[calc(100%-2.5rem)] max-md:overflow-hidden max-md:text-ellipsis max-md:whitespace-nowrap max-md:text-xs max-md:font-semibold'>
+                    {title}
+                </span>
+                <div className='relative -top-1 max-md:top-0 max-md:shrink-0'>
+                    <FaBookmark className='text-4xl text-amber-500 max-md:text-3xl' />
+                    <span className='absolute -top-1 w-full h-full flex justify-center items-center text-white text-base font-[600] max-md:text-xs'>{index + 1}</span>
                 </div>
             </div>
 
-            <div className='text-[#adb5bd] px-2 break-all'>
+            <div className='text-[#adb5bd] px-2 break-all max-md:px-0 max-md:text-[11px] max-md:leading-relaxed max-md:break-words'>
                 {description}
             </div>
         </motion.div>)
@@ -56,17 +58,20 @@ const Achievement = () => {
 
     return (
         <div
-            className='relative mt-10 grid grid-cols-5 gap-3'
+            className='relative mt-10 grid grid-cols-5 gap-3 md:auto-rows-fr max-md:mt-6 max-md:grid-cols-2'
         >
             {heroAchievement?.map((achievement, index) => {
                 const visible = index <= visibleIndex;
-                return <Card
-                    key={`HERO-ACHIEVEMENT-CARDS-WRAPPER-${index}`}
-                    title={achievement.title}
-                    description={achievement.description}
-                    visible={visible}
-                    index={index}
-                />
+                return (
+                    <div key={`HERO-ACHIEVEMENT-CARDS-WRAPPER-${index}`} className={`${index >= 4 ? 'max-md:hidden' : ''} max-md:min-h-[8.5rem]`}>
+                        <Card
+                            title={achievement.title}
+                            description={achievement.description}
+                            visible={visible}
+                            index={index}
+                        />
+                    </div>
+                )
             })}
         </div>
     )

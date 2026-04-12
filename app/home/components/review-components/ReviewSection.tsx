@@ -18,16 +18,16 @@ export interface Review {
 
 
 const Card = ({ data, position }: { data: Review, position: string }) => {
-    const baseClasses = "h-56  rounded-xl bg-white flex-shrink-0 p-5 flex flex-col gap-3 absolute top-0";
+    const baseClasses = "h-56 rounded-xl bg-white flex-shrink-0 p-5 flex flex-col gap-3 absolute top-0";
     const variableClasses = ((): string | null => {
         if (position === "center") {
-            return "w-[34%] scale-105 left-1/2 -translate-x-1/2 z-2 shadow-2xl"
+            return "w-[34%] scale-105 left-1/2 -translate-x-1/2 z-2 shadow-2xl max-md:w-[90%] max-md:scale-100"
         }
         else if (position === "left") {
-            return "w-[31%] scale-75 left-[4.5%] z-1 shadow-xl"
+            return "w-[31%] scale-75 left-[4.5%] z-1 shadow-xl max-md:hidden"
         }
         else if (position === "right") {
-            return "w-[31%] scale-75 right-[4.5%] z-1 shadow-xl"
+            return "w-[31%] scale-75 right-[4.5%] z-1 shadow-xl max-md:hidden"
         }
         return null;
     })();
@@ -101,7 +101,7 @@ const ReviewSection = () => {
             //     backgroundRepeat: 'no-repeat',
             // }}
         >
-            <SectionHeading heading="HEAR FROM OUR CUSTOMERS" className='px-20 pt-10 mb-2' />
+            <SectionHeading heading="HEAR FROM OUR CUSTOMERS" className='px-20 pt-10 mb-2 max-md:px-4' />
             <div className='w-full flex h-56 flex-row justify-center text-gray-500 tracking-wide flex-nowrap gap-0 pt-0 pb-10 relative mb-10'>
                 <Card data={reviews[prevIndex]} position='left' />
                 <Card data={reviews[curIndex]} position='center' />

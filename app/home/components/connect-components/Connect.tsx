@@ -22,7 +22,7 @@ const Connect = () => {
     return (
         <div
             id="contact"
-            className='w-full h-auto px-20 py-20 relative flex flex-row gap-10 bg-contain scroll-mt-24'
+            className='w-full h-auto px-20 py-20 relative flex flex-row gap-10 bg-contain scroll-mt-24 max-md:px-4 max-md:mt-[-100px] max-md:pb-12'
             // style={{
             //     backgroundImage: `linear-gradient(rgba(254, 250, 224, 0.6), rgba(254, 250, 224, 0.6)), url('/form-bg.webp')`,
             //     backgroundSize: 'cover',
@@ -30,10 +30,14 @@ const Connect = () => {
             //     backgroundRepeat: 'no-repeat',
             // }}
         >
-            <MapArea />
-            <SEOGenerator ariaLabel="Interactive India Coverage Map showing connections from Yamunanagar to major states and neighboring countries.">
-                {<SEOContent />}
-            </SEOGenerator>
+            <div className='max-md:hidden'>
+                <MapArea />
+            </div>
+            <div className='max-md:hidden'>
+                <SEOGenerator ariaLabel="Interactive India Coverage Map showing connections from Yamunanagar to major states and neighboring countries.">
+                    {<SEOContent />}
+                </SEOGenerator>
+            </div>
             <Content />
         </div>
     )

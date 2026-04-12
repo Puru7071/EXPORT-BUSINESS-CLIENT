@@ -2,9 +2,9 @@ import SectionHeading from "@/app/utils-components/SectionHeading"
 
 const About = () => {
     return (
-        <div className="w-[55%] py-10">
+        <div className={`w-[55%] py-10 max-md:w-full max-md:py-0`}>
             <SectionHeading heading = {"BHARGAV TRADING CO."} />
-            <p className="text-gray-500 text-base font-[600] text-justify mb-4 tracking-wide">
+            <p className="text-gray-500 text-base font-[600] text-justify mb-4 tracking-wide max-md:text-sm max-md:leading-7 max-md:tracking-normal">
                 At Bhargav Trading Co., we bring the richness of India’s craftsmanship and culinary heritage to markets across the globe. From premium spices and soft cotton textiles to handcrafted wooden decor and eco-friendly paper products, our offerings reflect quality, authenticity, and tradition. 
                 
                 <br></br>

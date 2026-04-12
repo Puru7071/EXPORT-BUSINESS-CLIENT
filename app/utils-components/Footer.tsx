@@ -6,7 +6,7 @@ import { FaInstagram , FaWhatsapp, FaLinkedin, FaGithub, FaPhoneAlt, FaAddressCa
 
 const Footer = () => {
     return (
-        <div className='bg-[#1f2939] p-16'>
+        <div className='bg-[#1f2939] p-16 max-md:p-6'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-10 md:gap-x-16 lg:gap-x-24'>
                 <div className='col-span-1 md:col-span-2 lg:col-span-1'>
                     <div className='flex flex-row items-center gap-4 mb-6'>
@@ -21,19 +21,19 @@ const Footer = () => {
                                 />
                             </span>
                         </a>
-                        <div className='font-extrabold h-full flex flex-col justify-between text-white text-2xl tracking-wide leading-tight drop-shadow'>
+                        <div className='font-extrabold h-full flex flex-col justify-between text-white text-2xl tracking-wide leading-tight drop-shadow max-md:text-xl'>
                             Bhargav <br />
                             Trading <br />
                             Co.
                         </div>
                     </div>
-                    <p className="text-blue-200 text-sm mt-2">Driving Success Through Global Trade</p>
-                    <p className="text-gray-300 mt-2 mb-6 leading-relaxed">Bhargav Trading Co. is your trusted partner for premium quality products exports.</p>
+                    <p className="text-blue-200 text-sm mt-2 max-md:text-xs">Driving Success Through Global Trade</p>
+                    <p className="text-gray-300 mt-2 mb-6 leading-relaxed max-md:text-sm">Bhargav Trading Co. is your trusted partner for premium quality products exports.</p>
                 </div>
 
                 <div>
-                    <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
-                    <ul className="space-y-3">
+                    <h3 className="text-lg font-semibold mb-6 text-white max-md:text-base max-md:mb-4">Quick Links</h3>
+                    <ul className="space-y-3 max-md:text-sm">
                         <li>
                             <a href="/home" className="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block group">
                                 <span className="group-hover:text-blue-300">→</span> Home
@@ -58,11 +58,11 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <h3 className="text-lg font-semibold mb-6 text-white">
+                    <h3 className="text-lg font-semibold mb-6 text-white max-md:text-base max-md:mb-4">
                         Contact Information
                     </h3>
 
-                    <ul className="space-y-4">
+                    <ul className="space-y-4 max-md:text-sm">
 
                         {/* Location */}
                         <li className="flex items-center gap-4 group">
@@ -142,7 +142,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <h3 className="text-lg font-semibold mb-6 text-white">Connect With Us</h3>
+                    <h3 className="text-lg font-semibold mb-6 text-white max-md:text-base max-md:mb-4">Connect With Us</h3>
 
                     {/* WhatsApp Button */}
                     <div className="mb-6">
@@ -150,7 +150,7 @@ const Footer = () => {
                             href={`https://wa.me/91${mobile}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center bg-green-600/20 backdrop-blur-md text-green-300 hover:text-green-200 hover:bg-green-600/30 transition-all duration-300 px-4 py-3 rounded-xl border border-green-500/20 group"
+                            className="inline-flex items-center bg-green-600/20 backdrop-blur-md text-green-300 hover:text-green-200 hover:bg-green-600/30 transition-all duration-300 px-4 py-3 rounded-xl border border-green-500/20 group max-md:text-sm"
                         >
                             <svg
                                 width="18"
@@ -188,14 +188,14 @@ const Footer = () => {
 
             <div className='border-t border-white/10 mt-12 pt-8'>
                 <div className="my-0 text-white mx-auto font-bold gap-2 flex flex-col justify-between">
-                    <span className='text-xl text-center'>Designed & Developed by <a target='_blank' href={creatorInfo.portfolio} className='bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent'> Puru Bhargava</a></span>
-                    <div className='flex flex-row gap-2 text-sm w-full text-zinc-400 justify-center'>
-                        <a href={`mailto:${creatorInfo.mail}`} className='flex flex-row items-center gap-2'> <FaEnvelope /> Email | </a>
-                        <a href={`https://wa.me/91${creatorInfo.number}`} className='flex flex-row items-center gap-2'> <FaWhatsapp /> WhatsApp |</a>
-                        <a href={creatorInfo.instagram} className='flex flex-row items-center gap-2'> <FaInstagram /> Instagram | </a>
-                        <a href={creatorInfo.linkedIn} className='flex flex-row items-center gap-2'> <FaLinkedin /> LinkedIn | </a>
-                        <a href={creatorInfo.github} className='flex flex-row items-center gap-2'> <FaGithub /> GitHub | </a>
-                        <a href={`tel:+91 ${creatorInfo.number}`} className='flex flex-row items-center gap-2'> <FaPhoneAlt /> +91 {creatorInfo.number} | </a>
+                    <span className='text-xl text-center max-md:text-base'>Designed & Developed by <a target='_blank' href={creatorInfo.portfolio} className='bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent'> Puru Bhargava</a></span>
+                    <div className='flex flex-row gap-2 text-sm w-full text-zinc-400 justify-center max-md:flex-wrap max-md:gap-x-4 max-md:gap-y-2 max-md:text-xs'>
+                        <a href={`mailto:${creatorInfo.mail}`} className='flex flex-row items-center gap-2'> <FaEnvelope /> Email <span className='max-md:hidden'>|</span> </a>
+                        <a href={`https://wa.me/91${creatorInfo.number}`} className='flex flex-row items-center gap-2'> <FaWhatsapp /> WhatsApp <span className='max-md:hidden'>|</span></a>
+                        <a href={creatorInfo.instagram} className='flex flex-row items-center gap-2'> <FaInstagram /> Instagram <span className='max-md:hidden'>|</span> </a>
+                        <a href={creatorInfo.linkedIn} className='flex flex-row items-center gap-2'> <FaLinkedin /> LinkedIn <span className='max-md:hidden'>|</span> </a>
+                        <a href={creatorInfo.github} className='flex flex-row items-center gap-2'> <FaGithub /> GitHub <span className='max-md:hidden'>|</span> </a>
+                        <a href={`tel:+91 ${creatorInfo.number}`} className='flex flex-row items-center gap-2'> <FaPhoneAlt /> +91 {creatorInfo.number} <span className='max-md:hidden'>|</span> </a>
                         <a href={creatorInfo.portfolio} className='flex flex-row items-center gap-2'> <FaAddressCard /> Portfolio </a>
                     </div>
                 </div>

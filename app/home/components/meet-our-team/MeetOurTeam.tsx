@@ -10,14 +10,19 @@ const MeetOurTeam = async () => {
 
     const { desktopOS } = getDesktopInfo(userAgent);
     return (
-        <div className={`${desktopOS == 'macOS' ? "" : "zoom-85"}`}>
+        <div 
+            className={`${desktopOS == 'macOS' ? "" : "zoom-85"} relative  pb-16`}
+            style={{
+                backgroundImage: `url('/assets/teams-background.svg')`
+            }}
+        >
             <div
-                className='h-[450px] w-full flex flex-col justify-center items-center '
+                className='h-[450px] w-full flex flex-col justify-center items-center max-md:h-[260px] max-md:px-4'
                 style={{
                     backgroundImage: `url('/assets/teams-background.svg')`
                 }}
             >
-                <div className=' w-[50%] text-center text-gray-700 text-shadow-red-900 text-6xl font-bold -mt-32'>
+                <div className=' w-[50%] text-center text-gray-700 text-shadow-red-900 text-6xl font-bold -mt-32 max-md:w-full max-md:text-3xl max-md:leading-tight max-md:-mt-8'>
                     Committed  to Excellence <br /> in Every Shipment.
                 </div>
             </div>
