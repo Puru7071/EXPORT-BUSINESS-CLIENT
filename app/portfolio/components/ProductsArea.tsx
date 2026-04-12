@@ -3,6 +3,7 @@
 import React from 'react'
 import { useSpeciesPortfolio } from '../portfolio-apis'
 import ProductCard from './ProductCard'
+import ManyMore from '@/app/utils-components/ManyMore'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_BASE_URL!
 
@@ -31,6 +32,7 @@ const ProductsArea = ({ table, heading, bucket }: ProductsAreaProps) => {
                     bucket={`${supabaseUrl}/storage/v1/object/public/${bucket}`}
                     key={`PORTFOLIO-ITEMS-${index}`} 
                 />)}
+                <ManyMore/>
             </div>
         </>
 

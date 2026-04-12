@@ -4,6 +4,7 @@ import ProductsArea from './ProductsArea'
 import { Suspense } from 'react'
 import ProductSkeleton from '@/app/utils-components/ProductSkeleton'
 import SectionHeading from '@/app/utils-components/SectionHeading'
+import ManyMore from '@/app/utils-components/ManyMore'
 import Footer from '@/app/utils-components/Footer'
 
 
